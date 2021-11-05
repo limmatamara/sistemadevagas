@@ -1,0 +1,122 @@
+body,  html, .container {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+
+#container {
+    margin: auto;
+    margin-top: 15%;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+#titulo {
+    background-color:#343a40;
+    color: white;
+    padding: 0.5px;
+    text-align: center;
+}
+
+main {
+    text-align:flex-start;
+    margin-left: 30%;
+}
+
+main p {
+    margin-top: 6%;
+    margin-bottom: 0%;
+}
+
+#container input {
+    margin-top: 1%;
+    border-radius: 2px;
+    border: 1px solid #343a40;
+    padding: 1%;
+}
+
+#container button {    
+    background-color: #343a40;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-weight: bolder;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2% 19%;    
+}
+
+#container button:hover {
+    cursor: pointer;
+    background-color:#343a407a;
+    border: 1px solid #343a40;
+    
+}
+
+#inferior {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#inferior a {
+    margin-top: 2%;
+    text-decoration: none;
+}
+
+#inferior a:hover {
+    color: #17a2b8;
+    text-decoration: underline;
+}
+
+.exibir {
+    display: block;
+}
+
+.esconder {
+    display: none;
+}
+
+#container2 {
+    margin: auto;
+    margin-top: 15%;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+#informacoesCadastro {
+    margin-left: 20%;
+}
+
+#informacoesCadastro p {
+    margin-bottom: 0%;
+}
+
+#informacoesCadastro input select{
+    margin-top: 1%;
+    border-radius: 2px;
+    border: 1px solid #343a40;
+    padding: 1%;
+}
+
+#botoes {
+    display: flex ;
+    justify-content: space-around;
+}
+
+
+#container2  button {    
+    background-color: #343a40;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-weight: bolder;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    padding: 1% 5%;
+}
