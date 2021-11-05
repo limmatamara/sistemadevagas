@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <section id="home-recrutador" class="container esconder">
+   
+    <section id="home-recrutador" class="container">
         <div class="content">
             <h3>
                 Vagas
@@ -24,12 +25,12 @@
 
             <div class="buttons">
                 <button>Sair</button>
-                <button>Cadastrar vaga +</button>
+                <button onclick="irPara('home-recrutador', 'cadastro-de-vaga')">Cadastrar vaga +</button>
             </div>
         </div>
     </section>
 
-    <section id="cadastro-de-vage" class="container">
+    <section id="cadastro-de-vaga" class="container esconder">
         <div class="content">
             <h3>
                 Vagas
@@ -38,23 +39,23 @@
             <div class="vaga-content">
                 <div>
                     <label for="input-titulo">Titulo: </label>
-                    <input type="text" id="input-title">
+                    <input type="text" id="input-titulo">
                 </div>
 
                 <div>
-                    <label for="input-descricao">Descrição</label>
+                    <label for="input-descricao">Descrição:</label>
                     <input id="input-descricao">
                 </div>
 
                 <div>
-                    <label for="input-remuneracao">Remuneração</label>
+                    <label for="input-remuneracao">Remuneração:</label>
                     <input type="text" id="input-remuneracao">
                 </div>
             </div>
 
             <div class="buttons">
-                <button>Sair</button>
-                <button>Cadastrar vaga +</button>
+                <button onclick="irPara('cadastro-de-vaga', 'home-recrutador')">Voltar</button>
+                <button onclick="cadastrarNovaVaga()">Cadastrar vaga +</button>
             </div>
         </div>
     </section>
