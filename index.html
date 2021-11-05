@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>SISTEMA DE VAGAS</title>
 </head>
+
 <body>
-    
+    <section id="home-recrutador" class="container esconder">
+        <div class="content">
+            <h3>
+                Vagas
+            </h3>
+
+            <div class="job-content">
+                <ul id="job-oportunity">
+
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <button>Sair</button>
+                <button>Cadastrar vaga +</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadastro-de-vage" class="container">
+        <div class="content">
+            <h3>
+                Vagas
+            </h3>
+
+            <div class="vaga-content">
+                <div>
+                    <label for="input-titulo">Titulo: </label>
+                    <input type="text" id="input-title">
+                </div>
+
+                <div>
+                    <label for="input-descricao">Descrição</label>
+                    <input id="input-descricao">
+                </div>
+
+                <div>
+                    <label for="input-remuneracao">Remuneração</label>
+                    <input type="text" id="input-remuneracao">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button>Sair</button>
+                <button>Cadastrar vaga +</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="./js/script.js"></script>
 </body>
+
 </html>

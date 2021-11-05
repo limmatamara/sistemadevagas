@@ -1,5 +1,28 @@
 {
-  "colaboradores": [
-    
+  "vagas": [
+    {
+      "title": "Vaga 1",
+      "description": "Vaga de dev",
+      "remuneration": 1500,
+      "id": 1
+    },
+    {
+      "title": "Vaga 2",
+      "description": "Vaga de dev",
+      "remuneration": 1500,
+      "id": 2
+    },
+    {
+      "title": "Vaga 3",
+      "description": "qualquer coisa",
+      "remuneration": 1500,
+      "id": 3
+    },
+    {
+      "title": "Vaga 4",
+      "description": "qualquer coisa",
+      "remuneration": 1500,
+      "id": 4
+    }
   ]
 }
