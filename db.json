@@ -1,0 +1,32 @@
+{
+  "vagas": [
+    {
+      "titulo": "Minha vaga 1",
+      "descricao": "Vaga top demais",
+      "remuneracao": "5000",
+      "candidatos": [],
+      "id": 1
+    },
+    {
+      "titulo": "minhs vaga",
+      "descricao": "kkkkkk",
+      "remuneracao": "5000",
+      "candidatos": [],
+      "id": 2
+    },
+    {
+      "titulo": "Vaga top  show",
+      "descricao": "vaga maravilhosa",
+      "remuneracao": "1000",
+      "candidatos": [],
+      "id": 3
+    },
+    {
+      "titulo": "Minha vaga 4",
+      "descricao": "Vaga muito top",
+      "remuneracao": "2000",
+      "candidatos": [],
+      "id": 4
+    }
+  ]
+}

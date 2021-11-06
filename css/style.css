@@ -1,3 +1,140 @@
+:root{
+    --color-black: #343a40;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    background-color: #E5E5E5;;
+}
+
+.esconder{
+    display: none !important;
+}
+
+/* ==== SECTION ID: home-recrutador */
+
+.container {
+
+width: 100vw;
+height: 100vh;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+div.content{
+    width: 900px;
+    border: 1px solid var(--color-black);
+    padding-bottom: 2rem;
+}
+
+section h3{
+    color: #fff;
+    background-color: var(--color-black);
+    text-align: center;
+    padding: .5rem;
+}
+
+.job-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+    border: 2px solid #9e9e9e;
+
+}
+
+ul li:hover{
+    background-color: #c7c7c7;
+}
+
+ul{
+    margin-top: 2rem;
+    width: 800px;
+}
+
+.buttons{
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons button{
+    width: 150px;
+    height: 35px;
+}
+
+.buttons button:first-child{
+    background-color: #ccc;
+    border-radius:  0.25rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.buttons button:first-child:hover{
+    filter: brightness(0.9);
+}
+
+.buttons button:last-child{
+    background-color: var(--color-black);
+    color: #fff;
+    border-radius:  0.25rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.buttons button:last-child:hover{
+    filter: brightness(0.8);
+}
+
+/* ==== CADASTRO DE VAGA id cadastro-de-vaga */
+
+.vaga-content{
+    max-width: 350px;
+    margin: 2rem auto 0;
+}
+
+.vaga-content div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem auto;
+}
+
+.vaga-content input{
+    width: 200px;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    outline: none;
+}
+
+label{
+    flex: 1;
+    text-align: center;
+}
+
 body,  html, .container {
     margin: 0;
     padding: 0;
