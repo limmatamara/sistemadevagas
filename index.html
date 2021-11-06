@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>SISTEMA DE VAGAS</title>
 </head>
-<body>
+<body>    
+    <div id="telaLogin" >
+        <div id="container">
+            <div id="titulo"><p>Login do Sistema</p></div>
+            <main>
+                <p>Email</p>
+                <input  id="mail" onkeyup="validarEmail()"> 
+
+                <p>Senha</p>
+                <input id="password" onkeyup="validarSenha()"> <br>
+                
+                <button type="submit">Login</button>
+            </main>      
+        </div>
+        <div id="inferior">
+            <button onclick="esqueceuASenha()">Esqueceu a senha?</button>
+            <button onclick="irParaTelaCadastro()">Não possui cadastro? </button>
+        </div>
+    </div>
+
+    <div id="telaCadastro" class="esconder">
+        <div id="container2">
+            <div id="titulo"><p>Cadastro</p></div>
+            <div id="informacoesCadastro">
+                <p>Tipo de Usuário</p>
+                <select id="tipoUsuario">
+                    <option value=""></option>
+                    <option value="recrutador">Recrutador</option>
+                    <option value="trabalhador">Trabalhador</option>
+                </select>
+
+                <p>Nome Completo*</p>
+                <input id="nomeCompleto" oninput="validarNome()"> <br>
+                <span id="nome-completo-error" class="esconder">Apenas letras são aceitas nesse campo</span>
+                <p>Data de Nascimento*</p>
+                <input id="dataNascimento" onkeyup="validarData()" maxlength="10">
+                <p>Email*</p>
+                <input id="mail" onkeyup="validarEmail()">
+                <p>Senha*</p>
+                <input id="password" onkeyup="validarSenha()"> <br>
+                <input type="checkbox" id="primeiroEmprego" name="primeiroEmprego">
+                <label for="primeiroEmprego">Primeiro Emprego?</label> <br>              
+            </div>
+            <div id="botoes">
+                <button id="return" onclick="voltarParaTelaPrincipal()">Voltar</button>
+                <button type="submit" id="cadastrar">Cadastrar</button>
+            </div>            
+        </div>
+    </div>
+   
     
+    <script src="/js/script.js"></script>
 </body>
 </html>
