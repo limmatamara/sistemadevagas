@@ -31,6 +31,15 @@
       "senha": "12345Ab!",
       "primeiroEmprego": "on",
       "id": 3
+    },
+    {
+      "tipoDeUsuario": "trabalhador",
+      "nome": "A",
+      "dataNascimento": "02/07/1992",
+      "email": "a@a.com",
+      "senha": "a",
+      "primeiroEmprego": "on",
+      "id": 4
     }
   ]
 }
