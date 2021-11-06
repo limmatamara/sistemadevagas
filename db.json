@@ -1,0 +1,46 @@
+{
+  "vagas": [
+    {
+      "title": "vaga 1",
+      "Descricao": "desenvolvedor jr",
+      "Salario": 1500,
+      "id": 1
+    },
+    {
+      "Titulo": "Vaga na Sidia - Efetivo",
+      "Descricao": "desenvolvedor jr",
+      "Salario": 1500,
+      "id": 2
+    },
+    {
+      "Titulo": "Vaga no Instituto Eldorado",
+      "Descricao": "Desenvolvimento de software, front end, react",
+      "salario": 2500,
+      "id": 3
+    },
+    {
+      "Titulo": "Vaga DBC - vaga 4",
+      "Descricao": "Desenvolvimento de software, front end, react",
+      "salario": 2500,
+      "id": 4
+    },
+    {
+      "Titulo": "Vaga DBC - vaga 5",
+      "Descricao": "front end, react",
+      "salario": 3500,
+      "id": 5
+    },
+    {
+      "Titulo": "vaga 6",
+      "Descricao": "front end, react",
+      "salario": 3500,
+      "id": 6
+    },
+    {
+      "Titulo": "vaga 7",
+      "Descricao": "front end, react",
+      "salario": 3500,
+      "id": 7
+    }
+  ]
+}
