@@ -13,6 +13,13 @@
       "remuneracao": "5000",
       "candidatos": [],
       "id": 2
+    },
+    {
+      "titulo": "Vaga top  show",
+      "descricao": "vaga maravilhosa",
+      "remuneracao": "1000",
+      "candidatos": [],
+      "id": 3
     }
   ]
 }

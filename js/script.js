@@ -1,4 +1,3 @@
-
 var idAtual = 0
 class Vaga {
     id;
@@ -8,7 +7,7 @@ class Vaga {
     candidatos = []
 
     constructor(titulo, descricao, remuneracao) {
-        
+
         this.titulo = titulo
         this.descricao = descricao
         this.remuneracao = remuneracao
@@ -22,14 +21,34 @@ const irPara = (origem, destino) => {
     elementoOrigem.className = 'container esconder';
 }
 
-const cadastrarNovaVaga = () => {
+const validaNovaVaga = () => {
+    let inputTitulo = document.getElementById('input-titulo')
+    let inputDescricao = document.getElementById('input-descricao')
+    let inputRemuneracao = document.getElementById('input-remuneracao')
+
+    if(inputTitulo.length){
+        console.log(inputTitulo.value)
+    }
+}
+
+let botaoNovaVaga = document.querySelector('.oi')
+botaoNovaVaga.addEventListener('click', validaNovaVaga)  
+
+const cadastrarNovaVaga = async () => {
+
     let inputTitulo = document.getElementById('input-titulo')
     let inputDescricao = document.getElementById('input-descricao')
     let inputRemuneracao = document.getElementById('input-remuneracao')
     let novaVaga = new Vaga(inputTitulo.value, inputDescricao.value, inputRemuneracao.value)
+    
+    try {
+        await axios.post('http://localhost:3000/vagas', novaVaga)
 
-    axios.post('http://localhost:3000/vagas', novaVaga)
-    console.log(novaVaga)
+    } catch (err) {
+        console.log('Deu erro => ' + err)
+    }
+
+    alert('Cadastro concluiído com suscesso')
 }
 
 const listarVagas = async () => {
@@ -52,8 +71,6 @@ const listarVagas = async () => {
         userList.appendChild(div)
 
     })
-
-    console.log(data);
 }
 
 listarVagas();

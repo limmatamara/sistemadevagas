@@ -61,6 +61,10 @@ ul li{
 
 }
 
+ul li:hover{
+    background-color: #c7c7c7;
+}
+
 ul{
     margin-top: 2rem;
     width: 800px;
@@ -105,7 +109,7 @@ ul{
     filter: brightness(0.8);
 }
 
-/* ==== CADASTRO DE VAGA id */
+/* ==== CADASTRO DE VAGA id cadastro-de-vaga */
 
 .vaga-content{
     max-width: 350px;
