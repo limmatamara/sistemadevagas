@@ -20,6 +20,13 @@
       "remuneracao": "1000",
       "candidatos": [],
       "id": 3
+    },
+    {
+      "titulo": "Minha vaga 4",
+      "descricao": "Vaga muito top",
+      "remuneracao": "2000",
+      "candidatos": [],
+      "id": 4
     }
   ]
 }
