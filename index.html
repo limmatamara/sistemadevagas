@@ -22,8 +22,8 @@
             </main>      
         </div>
         <div id="inferior">
-            <a href="#">Esqueceu a senha?</a>
-            <a href="#" onclick="irParaTelaCadastro()">Não possui cadastro?</a>
+            <button onclick="esqueceuASenha()">Esqueceu a senha?</button>
+            <button onclick="irParaTelaCadastro()">Não possui cadastro? </button>
         </div>
     </div>
 
@@ -39,9 +39,10 @@
                 </select>
 
                 <p>Nome Completo*</p>
-                <input id="nomeCompleto" onkeyup="validarNome()">
+                <input id="nomeCompleto" oninput="validarNome()"> <br>
+                <span id="nome-completo-error" class="esconder">Apenas letras são aceitas nesse campo</span>
                 <p>Data de Nascimento*</p>
-                <input id="date-input-registration" onkeyup="validarData()" maxlength="10">
+                <input id="dataNascimento" onkeyup="validarData()" maxlength="10">
                 <p>Email*</p>
                 <input id="mail" onkeyup="validarEmail()">
                 <p>Senha*</p>
@@ -52,9 +53,7 @@
             <div id="botoes">
                 <button id="return" onclick="voltarParaTelaPrincipal()">Voltar</button>
                 <button type="submit" id="cadastrar">Cadastrar</button>
-            </div>
-
-            
+            </div>            
         </div>
     </div>
    
