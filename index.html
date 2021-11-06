@@ -24,7 +24,7 @@
             </div>
 
             <div class="buttons">
-                <button>Sair</button>
+                <button onclick="irPara('home-recrutador','telaLogin')">Sair</button>
                 <button onclick="irPara('home-recrutador', 'cadastro-de-vaga')">Cadastrar vaga +</button>
             </div>
         </div>
@@ -66,8 +66,8 @@
     <title>SISTEMA DE VAGAS</title>
 </head>
 <body>    
-    <div id="telaLogin" >
-        <div id="container">
+    <div id="telaLogin">
+        <div id="container" >
             <div id="titulo"><p>Login do Sistema</p></div>
             <main>
                 <p>Email</p>
@@ -76,13 +76,13 @@
                 <p>Senha</p>
                 <input id="password" onkeyup="validarSenha()"> <br>
                 
-                <button type="submit">Login</button>
-            </main>      
+                <button type="submit" onclick="irPara('telaLogin', 'home-recrutador')">Login</button>
+            </main>
         </div>
         <div id="inferior">
             <button onclick="esqueceuASenha()">Esqueceu a senha?</button>
-            <button onclick="irParaTelaCadastro()">Não possui cadastro? </button>
-        </div>
+            <button onclick="irPara('telaLogin', 'telaCadastro')">Não possui cadastro? </button>
+        </div>   
     </div>
 
     <div id="telaCadastro" class="esconder">
@@ -100,23 +100,25 @@
                 <input id="nomeCompleto" oninput="validarNome()"> <br>
                 <span id="nome-completo-error" class="esconder">Apenas letras são aceitas nesse campo</span>
                 <p>Data de Nascimento*</p>
-                <input id="dataNascimento" onkeyup="validarData()" maxlength="10">
+                <input id="dataNascimento" onkeyup="validarData()" maxlength="10"> <br>
+                <span id="dataNascimento-registration-error" class="esconder">Data inválida</span>
                 <p>Email*</p>
-                <input id="mail" onkeyup="validarEmail()">
+                <input id="email">
                 <p>Senha*</p>
-                <input id="password" onkeyup="validarSenha()"> <br>
+                <input id="senha"> <br>
                 <input type="checkbox" id="primeiroEmprego" name="primeiroEmprego">
-                <label for="primeiroEmprego">Primeiro Emprego?</label> <br>              
+                <label for="primeiroEmprego">Primeiro Emprego?</label><br>              
             </div>
             <div id="botoes">
-                <button id="return" onclick="voltarParaTelaPrincipal()">Voltar</button>
-                <button type="submit" id="cadastrar">Cadastrar</button>
+                <button id="return" onclick="irPara('telaCadastro', 'telaLogin')">Voltar</button>
+                <button type="submit" id="cadastrar" onclick="cadastraUsuario()">Cadastrar</button>
             </div>            
         </div>
     </div>
    
-    
-    <script src="/js/script.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
+<script src="./js/validacoes.js"></script>
 </body>
 
 </html>

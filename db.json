@@ -20,13 +20,17 @@
       "remuneracao": "1000",
       "candidatos": [],
       "id": 3
-    },
+    }
+  ],
+  "usuarios": [
     {
-      "titulo": "Minha vaga 4",
-      "descricao": "Vaga muito top",
-      "remuneracao": "2000",
-      "candidatos": [],
-      "id": 4
+      "tipoDeUsuario": "recrutador",
+      "nome": "Victor Trajano",
+      "dataNascimento": "30/01/1998",
+      "email": "trajanodev@hotmail.com",
+      "senha": "12345Ab!",
+      "primeiroEmprego": "on",
+      "id": 3
     }
   ]
 }
