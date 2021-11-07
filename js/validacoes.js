@@ -154,8 +154,10 @@ async function esqueceuASenha() {
     const usuario = await buscarUsuario(email);     
     if (usuario) {
         alert(`A sua senha é => '${usuario.senha}'`);
-    } else {
+    } else if (email !== null){
         alert('Digite um email válido');
+        esqueceuASenha()
+        console.log(email)
     }
 }
 
