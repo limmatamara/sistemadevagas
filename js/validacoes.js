@@ -47,7 +47,13 @@ const validarData = () => {
 
     adicionarMascaraData(inputData, dataDigitada)
 
-    if (validDate && maiorDeIdade >= 18) ehValido = true;
+    let regex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
+
+    let formatoDeDataValida = regex.test(dataDigitada)
+
+    console.log(formatoDeDataValida)
+
+    if (validDate && maiorDeIdade >= 18 && formatoDeDataValida) ehValido = true;
 
     let erroData = document.getElementById('dataNascimento-registration-error');
 
