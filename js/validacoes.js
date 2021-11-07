@@ -1,19 +1,19 @@
 // const { default: axios } = require("axios")
 
 //#region Cadastro Usuário
-const validarTipoDeUsuario= () => {
+const validarTipoDeUsuario = () => {
     let select = document.getElementById('tipoUsuario')
     let tipoDeUsuario = select.options[select.selectedIndex].value
 
     let primeiroEmprego = document.getElementById('primeiroEmprego')
     let labelPrimeiroEmprego = document.getElementById('labelPrimeiroEmprego')
 
-    if(tipoDeUsuario === 'recrutador'){
-        primeiroEmprego.setAttribute('class' , 'esconder')
-        labelPrimeiroEmprego.setAttribute('class' , 'esconder')
-    }else{
-        primeiroEmprego.setAttribute('class' , '')
-        labelPrimeiroEmprego.setAttribute('class' , '')
+    if (tipoDeUsuario === 'recrutador') {
+        primeiroEmprego.setAttribute('class', 'esconder')
+        labelPrimeiroEmprego.setAttribute('class', 'esconder')
+    } else {
+        primeiroEmprego.setAttribute('class', '')
+        labelPrimeiroEmprego.setAttribute('class', '')
     }
     console.log(tipoDeUsuario)
 }
@@ -27,17 +27,17 @@ function validarNome() {
 
     let isNameValid = arrayName.every(nome => regex.test(nome) === true)
 
-    if(!isNameValid){
+    if (!isNameValid) {
         erroNome.className = 'error'
         ehValido = true
-    }else{
+    } else {
         erroNome.className = 'esconder'
     }
 
-    return ehValido 
+    return ehValido
 }
-const validarData = () => { 
-   
+const validarData = () => {
+
     let ehValido = false;
 
     let inputData = document.getElementById('dataNascimento');
@@ -66,18 +66,18 @@ const validarData = () => {
 
 const adicionarMascaraData = (input, data) => {
     let listaCaracteres = [...data];
-    
-    if(listaCaracteres && listaCaracteres.length) {
+
+    if (listaCaracteres && listaCaracteres.length) {
         let dataDigitada = listaCaracteres.filter(c => !isNaN(parseInt(c))).reduce((a, b) => a + b);
 
         const { length } = dataDigitada;
 
-        switch(length) { 
+        switch (length) {
             case 0: case 1: case 2:
-                input.value = dataDigitada; 
+                input.value = dataDigitada;
                 break;
             case 3: case 4:
-                input.value = `${dataDigitada.substr(0, 2)}/${dataDigitada.substr(2, 2)}`; 
+                input.value = `${dataDigitada.substr(0, 2)}/${dataDigitada.substr(2, 2)}`;
                 break;
             default:
                 input.value = `${dataDigitada.substr(0, 2)}/${dataDigitada.substr(2, 2)}/${dataDigitada.substr(4, 4)}`;
@@ -92,15 +92,15 @@ const validaEmail = () => {
 
     let emailValido = regex.test(emailInput.value);
 
-    if(emailValido){
+    if (emailValido) {
         ehValido = true;
     }
 
     console.log(emailValido)
-    
+
     let emailError = document.getElementById('email-registration-error')
     emailInput.value === '' ? emailError.setAttribute('class', 'esconder') :
-    ehValido ? emailError.setAttribute('class' , 'esconder') : emailError.setAttribute('class', 'error')
+        ehValido ? emailError.setAttribute('class', 'esconder') : emailError.setAttribute('class', 'error')
 }
 
 const validaSenha = () => {
@@ -109,44 +109,40 @@ const validaSenha = () => {
     let senhaInput = document.getElementById('senha');
     let senhaValida = regex.test(senhaInput.value);
 
-    if(senhaValida){
+    if (senhaValida) {
         ehValido = true
     }
 
     let erroSenha = document.getElementById('senha-registration-erro')
-    senhaInput.value === '' ? erroSenha.setAttribute('class' , 'esconder') :
-    ehValido ? erroSenha.setAttribute('class' , 'esconder') : erroSenha.setAttribute('class' , 'error')
+    senhaInput.value === '' ? erroSenha.setAttribute('class', 'esconder') :
+        ehValido ? erroSenha.setAttribute('class', 'esconder') : erroSenha.setAttribute('class', 'error')
 
 }
 
 
-
-const validaCadastroUsuario = () => {
-
-}
 //#endregion Cadastro usuário
 
 
 //#region  Validação de login
 
-async function validarLogin () {   
-    const response =  await axios.get('http://localhost:3000/usuarios');
+async function validarLogin() {
+    const response = await axios.get('http://localhost:3000/usuarios');
     let emailDigitado = document.getElementById('email-login').value;
-            let senhaDigitada = document.getElementById('password').value;
-            let podeLogar = response.data.find(c => c.email === emailDigitado && c.senha === senhaDigitada);
-            idUsuario = podeLogar.id;
-            tipoDeUsuario = podeLogar.tipoDeUsuario;
-            console.log(podeLogar);
-            if (podeLogar && podeLogar.tipoDeUsuario === 'recrutador') {
-                irPara('telaLogin', 'home-recrutador');
-                limparCampos();
-                listarVagas('job-oportunity')
-            } 
-            else if (podeLogar && podeLogar.tipoDeUsuario === 'trabalhador') {
-                irPara('telaLogin', 'home-trabalhador');
-                limparCampos();
-                listarVagas('job-oportunity-employee')
-            }                   
+    let senhaDigitada = document.getElementById('password').value;
+    let podeLogar = response.data.find(c => c.email === emailDigitado && c.senha === senhaDigitada);
+    idUsuario = podeLogar.id;
+    tipoDeUsuario = podeLogar.tipoDeUsuario;
+    console.log(podeLogar);
+    if (podeLogar && podeLogar.tipoDeUsuario === 'recrutador') {
+        irPara('telaLogin', 'home-recrutador');
+        limparCampos();
+        listarVagas('job-oportunity')
+    }
+    else if (podeLogar && podeLogar.tipoDeUsuario === 'trabalhador') {
+        irPara('telaLogin', 'home-trabalhador');
+        limparCampos();
+        listarVagas('job-oportunity-employee')
+    }
 }
 
 async function esqueceuASenha() {    
@@ -168,6 +164,7 @@ async function buscarUsuario (email) {
     return usuario;
 }
 //#endregion Validação de login
+
 
 //#region Validação nova vaga
 const validaNovaVaga = () => {
