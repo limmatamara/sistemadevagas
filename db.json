@@ -57,7 +57,17 @@
       "titulo": "minhs vaga",
       "descricao": "kkkkkk",
       "remuneracao": "5000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        }
+      ],
       "id": 2
     },
     {
@@ -93,24 +103,6 @@
       "candidatos": [
         {
           "tipoDeUsuario": "trabalhador",
-          "nome": "Novo joãozinho",
-          "dataNascimento": "30/01/1998",
-          "email": "jogaoteste@gg.com",
-          "senha": "12345Ab!",
-          "primeiroEmprego": "on",
-          "id": 7
-        },
-        {
-          "tipoDeUsuario": "trabalhador",
-          "nome": "A",
-          "dataNascimento": "02/07/1992",
-          "email": "a@a.com",
-          "senha": "a",
-          "primeiroEmprego": "on",
-          "id": 4
-        },
-        {
-          "tipoDeUsuario": "trabalhador",
           "nome": "A",
           "dataNascimento": "02/07/1992",
           "email": "a@a.com",
@@ -129,6 +121,62 @@
         }
       ],
       "id": 4
+    },
+    {
+      "titulo": "Analista",
+      "descricao": "Vaga Analista",
+      "remuneracao": "",
+      "candidatos": [],
+      "id": 5
+    },
+    {
+      "titulo": "1111",
+      "descricao": "11111",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 6
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 7
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 8
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 9
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "",
+      "candidatos": [],
+      "id": 10
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 11
+    },
+    {
+      "titulo": "Vaga Topinha",
+      "descricao": "Salário",
+      "remuneracao": "10000",
+      "candidatos": [],
+      "id": 12
     }
   ],
   "usuarios": [
@@ -170,10 +218,7 @@
     },
     {
       "tipoDeUsuario": "trabalhador",
-      "nome": "Novo joãozinho",
-      "dataNascimento": "30/01/1998",
-      "email": "jogaoteste@gg.com",
-      "senha": "12345Ab!",
+
       "primeiroEmprego": "on",
       "id": 7
     }

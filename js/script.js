@@ -67,7 +67,7 @@ const irPara = (origem, destino) => {
         elementoOrigem.setAttribute('class', 'esconder');
         elementoDestino.setAttribute('class', 'container');
     }
-}
+
 
 const cadastraUsuario = () => {
 
