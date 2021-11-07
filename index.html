@@ -24,8 +24,8 @@
             </div>
 
             <div class="buttons">
-                <button onclick="irPara('home-recrutador','telaLogin')">Sair</button>
-                <button onclick="irPara('home-recrutador', 'cadastro-de-vaga')">Cadastrar vaga +</button>
+                <button  onclick="irPara('home-recrutador','telaLogin')">Sair</button>
+                <button  onclick="irPara('home-recrutador', 'cadastro-de-vaga')">Cadastrar vaga +</button>
             </div>
         </div>
     </section>
@@ -71,12 +71,12 @@
             <div id="titulo"><p>Login do Sistema</p></div>
             <main>
                 <p>Email</p>
-                <input  id="mail" onkeyup="validarEmail()"> 
+                <input  id="email" onkeyup="validarEmail()"> 
 
                 <p>Senha</p>
                 <input id="password" onkeyup="validarSenha()"> <br>
                 
-                <button type="submit" onclick="irPara('telaLogin', 'home-recrutador')">Login</button>
+                <button id="btn-login" type="submit" onclick="irPara('telaLogin', 'home-recrutador')">Login</button>
             </main>
         </div>
         <div id="inferior">

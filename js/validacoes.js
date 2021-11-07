@@ -67,3 +67,25 @@ const validaCadastroUsuario = () => {
 }
 //#endregion Cadastro usuário
 
+const resetarCampos = (...campos) => {
+    campos.array.forEach( c => c.value = '');
+}
+
+const limparDados = () => {
+    //tela login
+    let inputEmail = document.getElementById('email');
+    let inputSenha = document.getElementById('password');
+    // tela cadastro
+    let inputNome = document.getElementById('nomeCompleto');
+    let inputDataNascimento = document.getElementById('dataNascimento');
+    let inputSenhalogin = document.getElementById('senha');
+    //tela cadastro de vaga
+    let selectUsuario = document.getElementById('tipoUsuario');
+    let inputTitulo = document.getElementById('input-titulo');
+    let inputDescricao = document.getElementById('input-descricao');
+    let inputRemuneracao = document.getElementById('input-descricao');
+
+
+
+    resetarCampos(inputEmail, inputSenha, inputNome, inputDataNascimento, inputSenhalogin, selectUsuario, inputTitulo, inputDescricao, inputRemuneracao);
+}

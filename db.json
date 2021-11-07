@@ -31,6 +31,24 @@
       "senha": "12345Ab!",
       "primeiroEmprego": "on",
       "id": 3
+    },
+    {
+      "tipoDeUsuario": "trabalhador",
+      "nome": "samu",
+      "dataNascimento": "17/07/1997",
+      "email": "samu@email.com",
+      "senha": "123Zxc!",
+      "primeiroEmprego": "on",
+      "id": 4
+    },
+    {
+      "tipoDeUsuario": "trabalhador",
+      "nome": "eu",
+      "dataNascimento": "17/07/1997",
+      "email": "",
+      "senha": "123Zxc!",
+      "primeiroEmprego": "on",
+      "id": 5
     }
   ]
 }
