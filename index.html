@@ -89,7 +89,7 @@
             </div>
             <div id="informacoesCadastro">
                 <p>Tipo de Usuário</p>
-                <select id="tipoUsuario">
+                <select id="tipoUsuario" onchange="validarTipoDeUsuario()">
                     <option value=""></option>
                     <option value="recrutador">Recrutador</option>
                     <option value="trabalhador">Trabalhador</option>
@@ -102,11 +102,13 @@
                 <input id="dataNascimento" onkeyup="validarData()" maxlength="10"> <br>
                 <span id="dataNascimento-registration-error" class="esconder">Data inválida</span>
                 <p>Email*</p>
-                <input id="email">
+                <input id="emailCadastro" onkeyup="validaEmail()"> <br>
+                <span id="email-registration-error" class="esconder">Email inválido</span>
                 <p>Senha*</p>
-                <input id="senha"> <br>
+                <input id="senha" onkeyup="validaSenha()"> <br>
+                <span id="senha-registration-erro" class="esconder">Senha inválida</span> <br>
                 <input type="checkbox" id="primeiroEmprego" name="primeiroEmprego">
-                <label for="primeiroEmprego">Primeiro Emprego?</label><br>
+                <label for="primeiroEmprego" id="labelPrimeiroEmprego">Primeiro Emprego?</label><br>              
             </div>
             <div id="botoes">
                 <button id="return" onclick="irPara('telaCadastro', 'telaLogin')">Voltar</button>

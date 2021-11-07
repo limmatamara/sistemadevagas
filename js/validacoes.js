@@ -1,6 +1,23 @@
 // const { default: axios } = require("axios")
 
 //#region Cadastro Usuário
+const validarTipoDeUsuario= () => {
+    let select = document.getElementById('tipoUsuario')
+    let tipoDeUsuario = select.options[select.selectedIndex].value
+
+    let primeiroEmprego = document.getElementById('primeiroEmprego')
+    let labelPrimeiroEmprego = document.getElementById('labelPrimeiroEmprego')
+
+    if(tipoDeUsuario === 'recrutador'){
+        primeiroEmprego.setAttribute('class' , 'esconder')
+        labelPrimeiroEmprego.setAttribute('class' , 'esconder')
+    }else{
+        primeiroEmprego.setAttribute('class' , '')
+        labelPrimeiroEmprego.setAttribute('class' , '')
+    }
+    console.log(tipoDeUsuario)
+}
+
 function validarNome() {
     ehValido = false
     let nome = document.getElementById('nomeCompleto').value
@@ -31,7 +48,13 @@ const validarData = () => {
 
     adicionarMascaraData(inputData, dataDigitada)
 
-    if (validDate && maiorDeIdade >= 18) ehValido = true;
+    let regex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/
+
+    let formatoDeDataValida = regex.test(dataDigitada)
+
+    console.log(formatoDeDataValida)
+
+    if (validDate && maiorDeIdade >= 18 && formatoDeDataValida) ehValido = true;
 
     let erroData = document.getElementById('dataNascimento-registration-error');
 
@@ -39,8 +62,6 @@ const validarData = () => {
         ehValido ? erroData.setAttribute('class', 'esconder') : erroData.setAttribute('class', 'error');
 
     return ehValido;
-
-
 }
 
 const adicionarMascaraData = (input, data) => {
@@ -63,6 +84,43 @@ const adicionarMascaraData = (input, data) => {
         }
     }
 }
+
+const validaEmail = () => {
+    let regex = /\S+@\S+\.\S+/;
+    let emailInput = document.getElementById('emailCadastro');
+    let ehValido = false;
+
+    let emailValido = regex.test(emailInput.value);
+
+    if(emailValido){
+        ehValido = true;
+    }
+
+    console.log(emailValido)
+    
+    let emailError = document.getElementById('email-registration-error')
+    emailInput.value === '' ? emailError.setAttribute('class', 'esconder') :
+    ehValido ? emailError.setAttribute('class' , 'esconder') : emailError.setAttribute('class', 'error')
+}
+
+const validaSenha = () => {
+    let ehValido = false;
+    let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    let senhaInput = document.getElementById('senha');
+    let senhaValida = regex.test(senhaInput.value);
+
+    if(senhaValida){
+        ehValido = true
+    }
+
+    let erroSenha = document.getElementById('senha-registration-erro')
+    senhaInput.value === '' ? erroSenha.setAttribute('class' , 'esconder') :
+    ehValido ? erroSenha.setAttribute('class' , 'esconder') : erroSenha.setAttribute('class' , 'error')
+
+}
+
+
+
 const validaCadastroUsuario = () => {
 
 }
