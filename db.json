@@ -64,14 +64,34 @@
       "titulo": "Vaga top  show",
       "descricao": "vaga maravilhosa",
       "remuneracao": "1000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        }
+      ],
       "id": 3
     },
     {
       "titulo": "Vaga nova 4",
       "descricao": "nova vaga p teste de array",
       "remuneracao": "2000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "Novo joãozinho",
+          "dataNascimento": "30/01/1998",
+          "email": "jogaoteste@gg.com",
+          "senha": "12345Ab!",
+          "primeiroEmprego": "on",
+          "id": 7
+        }
+      ],
       "id": 4
     }
   ],
@@ -111,6 +131,15 @@
       "senha": "12345Ab!",
       "primeiroEmprego": "on",
       "id": 6
+    },
+    {
+      "tipoDeUsuario": "trabalhador",
+      "nome": "Novo joãozinho",
+      "dataNascimento": "30/01/1998",
+      "email": "jogaoteste@gg.com",
+      "senha": "12345Ab!",
+      "primeiroEmprego": "on",
+      "id": 7
     }
   ]
 }

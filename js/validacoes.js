@@ -120,10 +120,6 @@ const validaSenha = () => {
 }
 
 
-
-const validaCadastroUsuario = () => {
-
-}
 //#endregion Cadastro usuário
 
 
