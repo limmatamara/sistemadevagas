@@ -1,7 +1,7 @@
-
-
 var idVaga = 0
 var idCandidato = 0
+var idUsuario = 0
+var tipoDeUsuario = ''
 
 class Vaga {
     id;
@@ -47,15 +47,12 @@ class Usuario{
         this.senha = senha;
         this.primeiroEmprego = primeiroEmprego;
     }
-
-    candidatarEmUmaVaga = (usuario, vaga) =>{
-        
-    }
 }
 
 const get = async(req) => {
     const { data: vagas } = await axios.get(`http://localhost:3000/${req}`)
     return vagas
+
 }
 
 const irPara = (origem, destino) => {
@@ -65,7 +62,7 @@ const irPara = (origem, destino) => {
     if((destino === 'telaLogin' || destino === 'telaCadastro')){
         elementoOrigem.setAttribute('class' , 'esconder');
         elementoDestino.setAttribute('class' , '');
-    }else if(destino === 'home-trabalhador' || destino === 'home-recrutador' || destino === 'cadastro-de-vaga'|| destino === 'detalhe-da-vaga'){
+    }else if(destino === 'home-trabalhador' || destino === 'home-recrutador' || destino === 'cadastro-de-vaga'|| destino === 'detalhe-da-vaga' || destino === 'detalhe-da-vaga-recrutador'){
         elementoOrigem.setAttribute('class' , 'esconder');
         elementoDestino.setAttribute('class' , 'container');
     }
@@ -89,7 +86,7 @@ const cadastraUsuario = () => {
     let inputTipo = document.getElementById('tipoUsuario')
     let inputNome = document.getElementById('nomeCompleto')
     let inputDataNascimento = document.getElementById('dataNascimento')
-    let inputEmail = document.getElementById('email')
+    let inputEmail = document.getElementById('emailCadastro')
     let inputSenha = document.getElementById('senha')
     let inputPrimeiroEmprego = document.getElementById('primeiroEmprego')
 
@@ -134,16 +131,25 @@ const listarVagas = async (id) => {
 
         li.appendChild(titleSpan);
         li.appendChild(remunerationSpan);
-        li.addEventListener('click' , (event) => {
-            irPara('home-trabalhador' , 'detalhe-da-vaga')
-            idVaga = event.target.id
-        })
+        if (tipoDeUsuario === 'trabalhador'){
+            li.addEventListener('click' , (event) => {
+                irPara('home-trabalhador' , 'detalhe-da-vaga')
+                idVaga = event.target.id
+                listarCandidatosEmVagaTrabalhador()
+            })
+        }else if (tipoDeUsuario === 'recrutador'){
+            li.addEventListener('click' , (event) => {
+                irPara('home-recrutador' , 'detalhe-da-vaga-recrutador')
+                idVaga = event.target.id
+                listarCandidatosEmVagaRecrutador()
+            })
+        }
+       
         li.setAttribute('id' , vaga.id)
         div.appendChild(li);
 
         let userList = document.getElementById(`${id}`)
         userList.appendChild(div)
-
     })
 }
 
@@ -157,12 +163,76 @@ const candidatarEmUmaNovaVaga = async() => {
 
     let candidatura = new Candidatura(idVaga, idUsuario)
 
+    console.log(encontrarUsuarios)
+    
     novoCandidato = encontrarVaga.candidatos.push(encontrarUsuarios)
     axios.put(`http://localhost:3000/vagas/${idVaga}`, encontrarVaga)
-
-    console.log(encontrarUsuarios)
+    
     console.log(encontrarVaga)
 }
+
+const listarCandidatosEmVagaTrabalhador = async() => {
+
+    let listaDeVagas = await get('vagas')
+    let encontrarVaga = listaDeVagas.find(v => v.id === parseInt(idVaga))
+    let vagaEncontrada = await get(`vagas/${encontrarVaga.id}`)
+    let candidatosDaVagaEncontrada = vagaEncontrada.candidatos
+
+        let tituloDaVaga = document.getElementById('span-titulo')
+        tituloDaVaga.innerText = vagaEncontrada.titulo
+
+        let descricaoDaVaga = document.getElementById('span-descricao')
+        descricaoDaVaga.innerText = vagaEncontrada.descricao
+
+        let remuneracaoDaVaga = document.getElementById('span-remuneracao')
+        remuneracaoDaVaga.innerText = vagaEncontrada.remuneracao
+  
+    
+    candidatosDaVagaEncontrada.forEach(candidato => {
+        let div = document.createElement('div')
+        let spanNome = document.createElement('span')
+        spanNome.innerText = candidato.nome
+        let spanDataNascimento = document.createElement('span')
+        spanDataNascimento.innerText = candidato.dataNascimento
+        let listaDeCandidatos = document.getElementById('candidatos-na-vaga-trabalhador')
+
+        div.appendChild(spanNome)
+        div.appendChild(spanDataNascimento)
+        listaDeCandidatos.appendChild(div)
+    })
+
+    console.log(vagaEncontrada)
+}
+
+const listarCandidatosEmVagaRecrutador = async() => {
+
+    let listaDeVagas = await get('vagas')
+    let encontrarVaga = listaDeVagas.find(v => v.id === parseInt(idVaga))
+    let vagaEncontrada = await get(`vagas/${encontrarVaga.id}`)
+    let candidatosDaVagaEncontrada = vagaEncontrada.candidatos
+
+    
+    candidatosDaVagaEncontrada.forEach(candidato => {
+        let div = document.createElement('div')
+        let spanNome = document.createElement('span')
+        spanNome.innerText = candidato.nome
+        let spanDataNascimento = document.createElement('span')
+        spanDataNascimento.innerText = candidato.dataNascimento
+        let button = document.createElement('button')
+        button.innerText = 'Reprovar'
+        let listaDeCandidatos = document.getElementById('candidatos-na-vaga-recrutador')
+        
+
+        div.appendChild(spanNome)
+        div.appendChild(spanDataNascimento)
+        div.appendChild(button)
+        listaDeCandidatos.appendChild(div)
+       
+    })
+
+    console.log(vagaEncontrada)
+}
+
 
 
 
@@ -175,5 +245,3 @@ function limparCampos() {
     document.getElementById('password').value = '';
 
 }
-
-

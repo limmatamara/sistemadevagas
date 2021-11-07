@@ -334,6 +334,12 @@ section .descricao-da-vaga div{
     margin-bottom: 2rem;
 }
 
+#detalhe-da-vaga-recrutador div.content h2{
+    color: var(--color-black);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 section div.candidatos-a-vaga{
     max-width: 700px;
     border: 1px solid var(--color-black);
@@ -369,9 +375,62 @@ section div.candidatos-info div span:last-child{
 
 #detalhe-da-vaga{
     margin: 10rem 0;
+    padding: 2rem 0;
 }
 
+#detalhe-da-vaga-recrutador{
+    margin: 13rem 0;
+}
 
+section .recrutador{
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid var(--color-black);
+    margin-bottom: 2rem;
+}
 
+section .candidatos-titulo-recrutador{
+    background-color: var(--color-black);
+}
 
+section .candidatos-titulo-recrutador div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
+section div.candidatos-info-recrutador{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+
+}
+
+section div.candidatos-info-recrutador div{
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-black);
+}
+
+div.candidatos-info-recrutador div span{
+    flex: 1;
+}
+section div.candidatos-info-recrutador div:last-child{
+    border: none;
+}
+
+section div.candidatos-info-recrutador div button{
+    height: 30px;
+    width: 100px;
+    cursor: pointer; 
+    background-color: #dc3545;
+    color: #f8f9fa;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+section div.candidatos-info-recrutador div button:hover{
+    filter: brightness(0.9);
+}

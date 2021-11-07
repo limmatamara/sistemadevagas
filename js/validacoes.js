@@ -129,13 +129,13 @@ const validaCadastroUsuario = () => {
 
 //#region  Validação de login
 
-var idUsuario = 0
 async function validarLogin () {   
     const response =  await axios.get('http://localhost:3000/usuarios');
     let emailDigitado = document.getElementById('email-login').value;
             let senhaDigitada = document.getElementById('password').value;
             let podeLogar = response.data.find(c => c.email === emailDigitado && c.senha === senhaDigitada);
-            idUsuario = podeLogar.id
+            idUsuario = podeLogar.id;
+            tipoDeUsuario = podeLogar.tipoDeUsuario;
             console.log(podeLogar);
             if (podeLogar && podeLogar.tipoDeUsuario === 'recrutador') {
                 irPara('telaLogin', 'home-recrutador');

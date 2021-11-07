@@ -123,30 +123,71 @@
                     </div>
                 </div>
 
-                <div class="candidatos-info">
-                    <div>
-                        <span>Victor Trajano</span>
-                        <span>30/01/1998</span>
-                    </div>
-
-                    <div>
-                        <span>Victor Trajano</span>
-                        <span>30/01/1998</span>
-                    </div>
-
-                    <div>
-                        <span>Victor Trajano</span>
-                        <span>30/01/1998</span>
-                    </div>
-                    <div>
-                        <span>Tirinho</span>
-                        <span>30/01/1998</span>
-                    </div>
+                <div class="candidatos-info" id="candidatos-na-vaga-trabalhador" >
+                    
                 </div>
             </div>
             <div class="buttons">
                 <button onclick="irPara('detalhe-da-vaga','telaLogin')">Sair</button>
-                <button onclick="candidatarEmUmaNovaVaga(event)">Candidatar-se</button>
+                <button onclick="candidatarEmUmaNovaVaga()">Candidatar-se</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="detalhe-da-vaga-recrutador" class="container esconder">
+        <div class="content">
+            <h3>
+                Detalhe da vaga
+            </h3>
+
+            <div class="descricao-da-vaga">
+                <div>
+                    <p>
+                        <span>
+                            <h4>Título:</h4>
+                        </span> <span id="span-titulo">Desenvolvedor Full stack</span>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        <span>
+                            <h4>Descrição:</h4>
+                        </span> <span id="span-descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Commodi dolores eos maiores corporis ut maxime. Lorem, ipsum dolor sit amet consectetur
+                            adipisicing elit. Assumenda consectetur eligendi laborum impedit aspernatur necessitatibus
+                            a. Sit, omnis quibusdam quod deserunt et facilis. Praesentium saepe cupiditate odit voluptas
+                            rerum nobis?</span>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        <span>
+                            <h4>Remuneração:</h4>
+                        </span> <span id="span-remuneracao">Desenvolvedor Full stack</span>
+                    </p>
+                </div>
+            </div>
+
+            <h2>Candidatos na vaga</h2>
+
+            <div class="candidatos-na-vaga recrutador">
+                <div class="candidatos-titulo-recrutador">
+                    <div>
+                        <h3>Nome</h3>
+                        <h3>Data de Nascimento</h3>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="candidatos-info-recrutador" id="candidatos-na-vaga-recrutador" >
+                    
+                </div>
+            </div>
+            <div class="buttons">
+                <button onclick="irPara('detalhe-da-vaga-recrutador','telaLogin')">Sair</button>
+                <button>Excluir vaga</button>
             </div>
         </div>
     </section>
@@ -212,5 +253,4 @@
     <script src="/js/script.js"></script>
     <script src="./js/validacoes.js"></script>
 </body>
-
 </html>
