@@ -57,7 +57,17 @@
       "titulo": "minhs vaga",
       "descricao": "kkkkkk",
       "remuneracao": "5000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        }
+      ],
       "id": 2
     },
     {
@@ -71,8 +81,83 @@
       "titulo": "Vaga nova 4",
       "descricao": "nova vaga p teste de array",
       "remuneracao": "2000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        }
+      ],
       "id": 4
+    },
+    {
+      "titulo": "Analista",
+      "descricao": "Vaga Analista",
+      "remuneracao": "",
+      "candidatos": [],
+      "id": 5
+    },
+    {
+      "titulo": "1111",
+      "descricao": "11111",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 6
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 7
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 8
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 9
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "",
+      "candidatos": [],
+      "id": 10
+    },
+    {
+      "titulo": "",
+      "descricao": "",
+      "remuneracao": "0",
+      "candidatos": [],
+      "id": 11
+    },
+    {
+      "titulo": "Vaga Topinha",
+      "descricao": "Salário",
+      "remuneracao": "10000",
+      "candidatos": [],
+      "id": 12
     }
   ],
   "usuarios": [
@@ -111,6 +196,15 @@
       "senha": "12345Ab!",
       "primeiroEmprego": "on",
       "id": 6
+    },
+    {
+      "tipoDeUsuario": "trabalhador",
+      "nome": "Joãozinho ",
+      "dataNascimento": "15/08/1994",
+      "email": "joaozinho@joao.com",
+      "senha": "Aa1234567@",
+      "primeiroEmprego": "on",
+      "id": 7
     }
   ]
 }

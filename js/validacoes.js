@@ -168,3 +168,34 @@ async function buscarUsuario (email) {
     return usuario;
 }
 //#endregion Validação de login
+
+//#region Validação nova vaga
+const validaNovaVaga = () => {
+    let ehValido = true;
+    let regex = /^$/
+    let inputTitulo = document.getElementById('input-titulo').value;
+    let inputDescricao = document.getElementById('input-descricao').value; 
+    let inputRemuneracao = document.getElementById('input-remuneracao').value > 0;
+
+    console.log(inputRemuneracao);
+    let inputTituloVazio = regex.test(inputTitulo);
+    let inputDescricaoVazia = regex.test(inputDescricao);
+   
+
+    if (inputTituloVazio) {
+        ehValido = false;
+    }
+
+    if (inputDescricaoVazia) {
+        ehValido = false;
+    }
+
+    if (!inputRemuneracao) {
+        ehValido = false;
+    }
+    
+    ehValido ? cadastrarNovaVaga() : alert('Não é possível realizar o cadastro!') 
+    return ehValido;
+}
+
+

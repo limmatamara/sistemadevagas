@@ -66,20 +66,7 @@ const irPara = (origem, destino) => {
         elementoOrigem.setAttribute('class' , 'esconder');
         elementoDestino.setAttribute('class' , 'container');
     }
-}
-
-// const validaNovaVaga = () => {
-//     let inputTitulo = document.getElementById('input-titulo')
-//     let inputDescricao = document.getElementById('input-descricao')
-//     let inputRemuneracao = document.getElementById('input-remuneracao')
-
-//     if(inputTitulo.length){
-//         console.log(inputTitulo.value)
-//     }
-// }
-
-// let botaoNovaVaga = document.querySelector('.oi')
-// botaoNovaVaga.addEventListener('click', validaNovaVaga)  
+} 
 
 const cadastraUsuario = () => {
 
@@ -113,8 +100,6 @@ const cadastrarNovaVaga = async () => {
         console.log('Deu erro => ' + err)
     }
     alert('Cadastro concluído com suscesso')
-
-    event.preventDefault()
 }
 
 const listarVagas = async (id) => {
