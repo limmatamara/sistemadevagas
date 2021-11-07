@@ -1,3 +1,4 @@
+
 class Vaga {
     id;
     titulo = '';
@@ -7,15 +8,27 @@ class Vaga {
 
     constructor(titulo, descricao, remuneracao) {
 
-        this.titulo = titulo
-        this.descricao = descricao
-        this.remuneracao = remuneracao
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.remuneracao = remuneracao;
     }
+}
+
+class Candidatura{
+   idVaga = 0;
+   idCandidato = 0;
+   reprovado = false;
+   
+   constructor(idVaga, idCandidato, reprovado){
+       this.idVaga = idVaga;
+       this.idCandidato = idCandidato;
+       this.reprovado = reprovado;
+   }
 }
 
 class Usuario{
     id;
-    tipoDeUsuario = ''
+    tipoDeUsuario = '';
     nome = '';
     dataNascimento = '';
     email = '';
@@ -32,6 +45,14 @@ class Usuario{
     }
 }
 
+
+
+
+const get = async(req) => {
+    const { data: vagas } = await axios.get(`http://localhost:3000/${req}`)
+    return vagas
+}
+
 const irPara = (origem, destino) => {
     let elementoOrigem = document.getElementById(origem);
     let elementoDestino = document.getElementById(destino);
@@ -40,6 +61,9 @@ const irPara = (origem, destino) => {
         elementoOrigem.setAttribute('class' , 'esconder');
         elementoDestino.setAttribute('class' , '');
     }else if(destino === 'home-trabalhador' || destino === 'home-recrutador' || destino === 'cadastro-de-vaga'){
+        elementoOrigem.setAttribute('class' , 'esconder');
+        elementoDestino.setAttribute('class' , 'container');
+    }else if(destino === 'detalhe-da-vaga'){
         elementoOrigem.setAttribute('class' , 'esconder');
         elementoDestino.setAttribute('class' , 'container');
     }
@@ -57,8 +81,6 @@ const irPara = (origem, destino) => {
 
 // let botaoNovaVaga = document.querySelector('.oi')
 // botaoNovaVaga.addEventListener('click', validaNovaVaga)  
-
-
 
 const cadastraUsuario = () => {
 
@@ -78,7 +100,7 @@ const cadastraUsuario = () => {
     }
 }
 
-const cadastrarNovaVaga = async () => {
+const cadastrarNovaVaga = async (event) => {
 
     let inputTitulo = document.getElementById('input-titulo')
     let inputDescricao = document.getElementById('input-descricao')
@@ -91,25 +113,28 @@ const cadastrarNovaVaga = async () => {
     } catch (err) {
         console.log('Deu erro => ' + err)
     }
-
-
     alert('Cadastro concluído com suscesso')
+
+    event.preventDefault()
 }
 
 const listarVagas = async (id) => {
-    const { data } = await axios.get('http://localhost:3000/vagas');
+    const vagas = await get('vagas')
 
-    data.forEach(vaga => {
+    vagas.forEach(vaga => {
         let div = document.createElement('div');
         let li = document.createElement('li');
         let titleSpan = document.createElement('span');
-        let remunerationSpan = document.createElement('span');
+        let remunerationSpan = document.createElement('span'); 
 
         titleSpan.innerText = `Titulo: ${vaga.titulo}`
         remunerationSpan.innerText = `Remuneração: ${vaga.remuneracao}`;
 
         li.appendChild(titleSpan);
         li.appendChild(remunerationSpan);
+        li.addEventListener('click' , () => {
+            irPara('home-trabalhador' , 'detalhe-da-vaga')
+        })
         div.appendChild(li);
 
         let userList = document.getElementById(`${id}`)
@@ -117,7 +142,6 @@ const listarVagas = async (id) => {
 
     })
 }
-
 
 function limparCampos() {
     document.getElementById('email-login').value = '';

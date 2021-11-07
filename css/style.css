@@ -22,7 +22,7 @@ body{
     display: none !important;
 }
 
-/* ==== SECTION ID: home-recrutador */
+/* ==== SECTION ID: home-recrutador e home-trabalhador */
 
 .container {
 
@@ -33,7 +33,6 @@ justify-content: center;
 align-items: center;
 
 }
-
 
 
 div.content{
@@ -149,6 +148,7 @@ body,  html, .container {
 }
 
 
+/* ==== Login e tela cadastro ID: telaLogin e telaCadastro ====  */
 #container {
     margin: auto;
     margin-top: 15%;
@@ -158,17 +158,6 @@ body,  html, .container {
     display: flex;
     flex-direction: column;
 }
-/* 
-.container {
-
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
-    } */
 
 #titulo {
     background-color:#343a40;
@@ -302,6 +291,87 @@ main p {
     color: red;
     font-size: 0.5rem;
 }
+
+/* ==== section detalhe da vaga - ID: detalhe-da-vaga */
+
+
+section .descricao-da-vaga{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-black);
+    max-width: 700px;
+    margin: 2.5rem auto;
+    padding: 1.5rem;
+
+}
+
+section .descricao-da-vaga div{
+    display: flex;
+    justify-content: left;
+    margin-bottom: 2rem;
+}
+
+
+section .descricao-da-vaga div:last-child{
+    margin-bottom: 0;
+}
+
+section .descricao-da-vaga div h4{
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+section .descricao-da-vaga div{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: justify;
+}
+
+
+#detalhe-da-vaga div.content h2{
+    color: var(--color-black);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+section div.candidatos-a-vaga{
+    max-width: 700px;
+    border: 1px solid var(--color-black);
+    margin: 0 auto 2.5rem;
+}
+
+section div.candidatos-titulo div{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    background-color: var(--color-black);
+    padding: .25rem;
+}
+
+section div.candidatos-titulo h3{
+    margin: 0 1rem;
+}
+
+section div.candidatos-info div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-black);
+}
+
+section div.candidatos-info div:last-child{
+    border: none;
+}
+
+section div.candidatos-info div span:last-child{
+    margin-right: 3rem;
+}
+
+#detalhe-da-vaga{
+    margin: 10rem 0;
+}
+
+
 
 
 

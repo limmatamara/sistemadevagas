@@ -27,6 +27,20 @@
       "remuneracao": "5000",
       "candidatos": [],
       "id": 4
+    },
+    {
+      "titulo": "Vaga 5",
+      "descricao": "minha vaga top",
+      "remuneracao": "2000",
+      "candidatos": [],
+      "id": 5
+    },
+    {
+      "titulo": "Nova vaga",
+      "descricao": "fkdamfsdmcsdoifmdso",
+      "remuneracao": "3000",
+      "candidatos": [],
+      "id": 6
     }
   ],
   "usuarios": [
