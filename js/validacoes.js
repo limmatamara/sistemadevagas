@@ -134,9 +134,11 @@ async function validarLogin () {
             console.log(podeLogar);
             if (podeLogar && podeLogar.tipoDeUsuario === 'recrutador') {
                 irPara('telaLogin', 'home-recrutador');
+                limparCampos();
             } 
             else if (podeLogar && podeLogar.tipoDeUsuario === 'trabalhador') {
                 irPara('telaLogin', 'home-trabalhador');
+                limparCampos();
             }                   
 }
 

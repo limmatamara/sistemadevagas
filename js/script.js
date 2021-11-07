@@ -119,6 +119,10 @@ listarVagas();
 
 var tipoDeUsuario = document.getElementById("tipoUsuario");
 
+function limparCampos() {
+    document.getElementById('email-login').value = '';
+    document.getElementById('password').value = '';
 
+}
 
 
