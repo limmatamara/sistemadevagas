@@ -90,6 +90,33 @@
           "senha": "12345Ab!",
           "primeiroEmprego": "on",
           "id": 7
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
         }
       ],
       "id": 4

@@ -1,3 +1,4 @@
+
 var idVaga = 0
 var idCandidato = 0
 var idUsuario = 0
@@ -100,7 +101,6 @@ const cadastrarNovaVaga = async () => {
         console.log('Deu erro => ' + err)
     }
     alert('Cadastro concluído com suscesso')
-
 }
 
 const listarVagas = async (id) => {
@@ -227,6 +227,16 @@ const listarCandidatosEmVagaRecrutador = async () => {
 
     console.log(vagaEncontrada)
 }
+
+const excluirVaga = async() => {
+    try{
+        const deletarVaga = await axios.delete(`http://localhost:3000/vagas/${idVaga}`)
+    }catch(err){
+        console.log('Deu erro => ' + err)
+    }
+}
+
+
 
 
 
