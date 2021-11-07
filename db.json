@@ -20,6 +20,13 @@
       "remuneracao": "1000",
       "candidatos": [],
       "id": 3
+    },
+    {
+      "titulo": "Nova vaga 5",
+      "descricao": "Minha vaga 5 para teste",
+      "remuneracao": "5000",
+      "candidatos": [],
+      "id": 4
     }
   ],
   "usuarios": [

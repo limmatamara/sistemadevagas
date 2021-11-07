@@ -126,6 +126,8 @@ const validaCadastroUsuario = () => {
 }
 //#endregion Cadastro usuário
 
+
+//#region  Validação de login
 async function validarLogin () {   
     const response =  await axios.get('http://localhost:3000/usuarios');
     let emailDigitado = document.getElementById('email-login').value;
@@ -135,10 +137,12 @@ async function validarLogin () {
             if (podeLogar && podeLogar.tipoDeUsuario === 'recrutador') {
                 irPara('telaLogin', 'home-recrutador');
                 limparCampos();
+                listarVagas('job-oportunity')
             } 
             else if (podeLogar && podeLogar.tipoDeUsuario === 'trabalhador') {
                 irPara('telaLogin', 'home-trabalhador');
                 limparCampos();
+                listarVagas('job-oportunity-employee')
             }                   
 }
 
@@ -146,7 +150,7 @@ async function esqueceuASenha() {
     let email = prompt('Digite o email para recuperação de senha:');
     const usuario = await buscarUsuario(email);     
     if (usuario) {
-        alert(usuario.senha);
+        alert(`A sua senha é => '${usuario.senha}'`);
     } else {
         alert('Digite um email válido');
     }
@@ -158,4 +162,4 @@ async function buscarUsuario (email) {
     let usuario= usuarios.find(usuario => usuario.email === email);
     return usuario;
 }
-
+//#endregion Validação de login

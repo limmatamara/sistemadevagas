@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <section id="home-recrutador" class="container esconder">
         <div class="content">
             <h3>
@@ -26,6 +25,24 @@
             <div class="buttons">
                 <button onclick="irPara('home-recrutador','telaLogin')">Sair</button>
                 <button onclick="irPara('home-recrutador', 'cadastro-de-vaga')">Cadastrar vaga +</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="home-trabalhador" class="container esconder">
+        <div class="content">
+            <h3>
+                Vagas
+            </h3>
+
+            <div class="job-content">
+                <ul id="job-oportunity-employee">
+
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <button onclick="irPara('home-trabalhador','telaLogin')">Sair</button>
             </div>
         </div>
     </section>
@@ -61,7 +78,7 @@
     </section>
 
 
-    <div id="telaLogin">
+    <div id="telaLogin" class="">
         <div id="container">
             <div id="titulo">
                 <p>Login do Sistema</p>

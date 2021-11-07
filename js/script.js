@@ -36,10 +36,12 @@ const irPara = (origem, destino) => {
     let elementoOrigem = document.getElementById(origem);
     let elementoDestino = document.getElementById(destino);
     elementoDestino.className = elementoDestino.className.replace('esconder', '');
-    if((destino === 'telaLogin' || origem === 'telaLogin')){
-        elementoOrigem.className = 'esconder';
-    }else{
-        elementoOrigem.className = 'container esconder';
+    if((destino === 'telaLogin' || destino === 'telaCadastro')){
+        elementoOrigem.setAttribute('class' , 'esconder');
+        elementoDestino.setAttribute('class' , '');
+    }else if(destino === 'home-trabalhador' || destino === 'home-recrutador' || destino === 'cadastro-de-vaga'){
+        elementoOrigem.setAttribute('class' , 'esconder');
+        elementoDestino.setAttribute('class' , 'container');
     }
 }
 
@@ -94,7 +96,7 @@ const cadastrarNovaVaga = async () => {
     alert('Cadastro concluído com suscesso')
 }
 
-const listarVagas = async () => {
+const listarVagas = async (id) => {
     const { data } = await axios.get('http://localhost:3000/vagas');
 
     data.forEach(vaga => {
@@ -110,14 +112,12 @@ const listarVagas = async () => {
         li.appendChild(remunerationSpan);
         div.appendChild(li);
 
-        let userList = document.getElementById('job-oportunity')
+        let userList = document.getElementById(`${id}`)
         userList.appendChild(div)
 
     })
 }
-listarVagas();
 
-var tipoDeUsuario = document.getElementById("tipoUsuario");
 
 function limparCampos() {
     document.getElementById('email-login').value = '';
