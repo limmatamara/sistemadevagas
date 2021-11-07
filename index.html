@@ -10,7 +10,7 @@
 </head>
 
 <body>
-   
+
     <section id="home-recrutador" class="container esconder">
         <div class="content">
             <h3>
@@ -60,34 +60,33 @@
         </div>
     </section>
 
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
-    <script src="./js/script.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <title>SISTEMA DE VAGAS</title>
-</head>
-<body>    
+
     <div id="telaLogin">
-        <div id="container" >
-            <div id="titulo"><p>Login do Sistema</p></div>
+        <div id="container">
+            <div id="titulo">
+                <p>Login do Sistema</p>
+            </div>
             <main>
                 <p>Email</p>
-                <input  id="email-login"> 
+                <input id="email-login">
 
                 <p>Senha</p>
                 <input type="password" id="password"> <br>
-                
+
                 <button type="submit" onclick="validarLogin()">Login</button>
             </main>
         </div>
         <div id="inferior">
             <button onclick="esqueceuASenha()">Esqueceu a senha?</button>
             <button onclick="irPara('telaLogin', 'telaCadastro')">Não possui cadastro? </button>
-        </div>   
+        </div>
     </div>
 
     <div id="telaCadastro" class="esconder">
         <div id="container2">
-            <div id="titulo"><p>Cadastro</p></div>
+            <div id="titulo">
+                <p>Cadastro</p>
+            </div>
             <div id="informacoesCadastro">
                 <p>Tipo de Usuário</p>
                 <select id="tipoUsuario">
@@ -107,18 +106,20 @@
                 <p>Senha*</p>
                 <input id="senha"> <br>
                 <input type="checkbox" id="primeiroEmprego" name="primeiroEmprego">
-                <label for="primeiroEmprego">Primeiro Emprego?</label><br>              
+                <label for="primeiroEmprego">Primeiro Emprego?</label><br>
             </div>
             <div id="botoes">
                 <button id="return" onclick="irPara('telaCadastro', 'telaLogin')">Voltar</button>
                 <button type="submit" id="cadastrar" onclick="cadastraUsuario()">Cadastrar</button>
-            </div>            
+            </div>
         </div>
     </div>
-   
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
-<script src="/js/script.js"></script>
-<script src="./js/validacoes.js"></script>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+    <script src="/js/script.js"></script>
+    <script src="./js/validacoes.js"></script>
 </body>
 
 </html>

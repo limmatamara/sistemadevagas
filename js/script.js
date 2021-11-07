@@ -119,14 +119,6 @@ listarVagas();
 
 var tipoDeUsuario = document.getElementById("tipoUsuario");
 
-function esqueceuASenha() {
-    let recuperarSenha = prompt("Digite um e-mail válido para a recuperação de senha:");
-    if (recuperarSenha === true) {
-        return alert('SENHA');
-    } else {
-        return alert('ERRO: este não é um email válido. Tente novamente.');
-    }
-}
 
 
 
