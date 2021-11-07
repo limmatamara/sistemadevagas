@@ -49,6 +49,15 @@
           "senha": "a",
           "primeiroEmprego": "on",
           "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "victor",
+          "dataNascimento": "30/01/1998",
+          "email": "ig@gg.com",
+          "senha": "12345Ab!",
+          "primeiroEmprego": "on",
+          "id": 5
         }
       ],
       "id": 1
@@ -129,6 +138,13 @@
         }
       ],
       "id": 4
+    },
+    {
+      "titulo": "r",
+      "descricao": "r",
+      "remuneracao": "1",
+      "candidatos": [],
+      "id": 5
     }
   ],
   "usuarios": [
