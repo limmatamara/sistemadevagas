@@ -71,12 +71,12 @@
             <div id="titulo"><p>Login do Sistema</p></div>
             <main>
                 <p>Email</p>
-                <input  id="mail" onkeyup="validarEmail()"> 
+                <input  id="email-login"> 
 
                 <p>Senha</p>
-                <input id="password" onkeyup="validarSenha()"> <br>
+                <input type="password" id="password"> <br>
                 
-                <button type="submit" onclick="irPara('telaLogin', 'home-recrutador')">Login</button>
+                <button type="submit" onclick="validarLogin()">Login</button>
             </main>
         </div>
         <div id="inferior">

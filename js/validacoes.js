@@ -119,3 +119,17 @@ const validaCadastroUsuario = () => {
 }
 //#endregion Cadastro usuário
 
+async function validarLogin () {   
+    const response =  await axios.get('http://localhost:3000/usuarios');
+    let emailDigitado = document.getElementById('email-login').value;
+            let senhaDigitada = document.getElementById('password').value;
+            let podeLogar = response.data.find(c => c.email === emailDigitado && c.senha === senhaDigitada);
+            console.log(podeLogar);
+            if (podeLogar && podeLogar.tipoDeUsuario === 'recrutador') {
+                irPara('telaLogin', 'home-recrutador');
+            } 
+            else if (podeLogar && podeLogar.tipoDeUsuario === 'trabalhador') {
+                irPara('telaLogin', 'home-trabalhador');
+            }                   
+}
+
