@@ -214,10 +214,10 @@ const listarCandidatosEmVagaRecrutador = async () => {
         let spanDataNascimento = document.createElement('span')
         spanDataNascimento.innerText = candidato.dataNascimento
         let button = document.createElement('button')
+        button.setAttribute('id' , candidato.id)
         button.innerText = 'Reprovar'
         let listaDeCandidatos = document.getElementById('candidatos-na-vaga-recrutador')
-
-
+        
         div.appendChild(spanNome)
         div.appendChild(spanDataNascimento)
         div.appendChild(button)
@@ -230,7 +230,7 @@ const listarCandidatosEmVagaRecrutador = async () => {
 
 const excluirVaga = async() => {
     try{
-        const deletarVaga = await axios.delete(`http://localhost:3000/vagas/${idVaga}`)
+        await axios.delete(`http://localhost:3000/vagas/${idVaga}`)
     }catch(err){
         console.log('Deu erro => ' + err)
     }
