@@ -4,7 +4,53 @@
       "titulo": "Minha vaga 1",
       "descricao": "Vaga top demais",
       "remuneracao": "5000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "victor",
+          "dataNascimento": "30/01/1998",
+          "email": "ig@gg.com",
+          "senha": "12345Ab!",
+          "primeiroEmprego": "on",
+          "id": 5
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "victor",
+          "dataNascimento": "30/01/1998",
+          "email": "ig@gg.com",
+          "senha": "12345Ab!",
+          "primeiroEmprego": "on",
+          "id": 5
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "Joaozinho Pereira",
+          "dataNascimento": "30/09/2001",
+          "email": "aa@gg.com",
+          "senha": "12345Ab!",
+          "primeiroEmprego": "on",
+          "id": 6
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        }
+      ],
       "id": 1
     },
     {
@@ -20,6 +66,13 @@
       "remuneracao": "1000",
       "candidatos": [],
       "id": 3
+    },
+    {
+      "titulo": "Vaga nova 4",
+      "descricao": "nova vaga p teste de array",
+      "remuneracao": "2000",
+      "candidatos": [],
+      "id": 4
     }
   ],
   "usuarios": [
@@ -40,6 +93,24 @@
       "senha": "a",
       "primeiroEmprego": "on",
       "id": 4
+    },
+    {
+      "tipoDeUsuario": "trabalhador",
+      "nome": "victor",
+      "dataNascimento": "30/01/1998",
+      "email": "ig@gg.com",
+      "senha": "12345Ab!",
+      "primeiroEmprego": "on",
+      "id": 5
+    },
+    {
+      "tipoDeUsuario": "trabalhador",
+      "nome": "Joaozinho Pereira",
+      "dataNascimento": "30/09/2001",
+      "email": "aa@gg.com",
+      "senha": "12345Ab!",
+      "primeiroEmprego": "on",
+      "id": 6
     }
   ]
 }

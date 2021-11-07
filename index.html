@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <section id="home-recrutador" class="container esconder">
         <div class="content">
             <h3>
@@ -26,6 +25,24 @@
             <div class="buttons">
                 <button onclick="irPara('home-recrutador','telaLogin')">Sair</button>
                 <button onclick="irPara('home-recrutador', 'cadastro-de-vaga')">Cadastrar vaga +</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="home-trabalhador" class="container esconder">
+        <div class="content">
+            <h3>
+                Vagas
+            </h3>
+
+            <div class="job-content">
+                <ul id="job-oportunity-employee">
+
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <button onclick="irPara('home-trabalhador','telaLogin')">Sair</button>
             </div>
         </div>
     </section>
@@ -55,13 +72,127 @@
 
             <div class="buttons">
                 <button onclick="irPara('cadastro-de-vaga', 'home-recrutador')">Voltar</button>
-                <button class="oi" onclick="cadastrarNovaVaga()">Cadastrar vaga +</button>
+                <button class="oi" onclick="cadastrarNovaVaga(event)">Cadastrar vaga +</button>
             </div>
         </div>
     </section>
 
+    <section id="detalhe-da-vaga" class="container esconder">
+        <div class="content">
+            <h3>
+                Detalhe da vaga
+            </h3>
 
-    <div id="telaLogin">
+            <div class="descricao-da-vaga">
+                <div>
+                    <p>
+                        <span>
+                            <h4>Título:</h4>
+                        </span> <span id="span-titulo">Desenvolvedor Full stack</span>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        <span>
+                            <h4>Descrição:</h4>
+                        </span> <span id="span-descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Commodi dolores eos maiores corporis ut maxime. Lorem, ipsum dolor sit amet consectetur
+                            adipisicing elit. Assumenda consectetur eligendi laborum impedit aspernatur necessitatibus
+                            a. Sit, omnis quibusdam quod deserunt et facilis. Praesentium saepe cupiditate odit voluptas
+                            rerum nobis?</span>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        <span>
+                            <h4>Remuneração:</h4>
+                        </span> <span id="span-remuneracao">Desenvolvedor Full stack</span>
+                    </p>
+                </div>
+            </div>
+
+            <h2>Candidatos na vaga</h2>
+
+            <div class="candidatos-a-vaga">
+                <div class="candidatos-titulo">
+                    <div>
+                        <h3>Nome</h3>
+                        <h3>Data de Nascimento</h3>
+                    </div>
+                </div>
+
+                <div class="candidatos-info" id="candidatos-na-vaga-trabalhador" >
+                    
+                </div>
+            </div>
+            <div class="buttons">
+                <button onclick="irPara('detalhe-da-vaga','telaLogin')">Sair</button>
+                <button onclick="candidatarEmUmaNovaVaga()">Candidatar-se</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="detalhe-da-vaga-recrutador" class="container esconder">
+        <div class="content">
+            <h3>
+                Detalhe da vaga
+            </h3>
+
+            <div class="descricao-da-vaga">
+                <div>
+                    <p>
+                        <span>
+                            <h4>Título:</h4>
+                        </span> <span id="span-titulo">Desenvolvedor Full stack</span>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        <span>
+                            <h4>Descrição:</h4>
+                        </span> <span id="span-descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Commodi dolores eos maiores corporis ut maxime. Lorem, ipsum dolor sit amet consectetur
+                            adipisicing elit. Assumenda consectetur eligendi laborum impedit aspernatur necessitatibus
+                            a. Sit, omnis quibusdam quod deserunt et facilis. Praesentium saepe cupiditate odit voluptas
+                            rerum nobis?</span>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        <span>
+                            <h4>Remuneração:</h4>
+                        </span> <span id="span-remuneracao">Desenvolvedor Full stack</span>
+                    </p>
+                </div>
+            </div>
+
+            <h2>Candidatos na vaga</h2>
+
+            <div class="candidatos-na-vaga recrutador">
+                <div class="candidatos-titulo-recrutador">
+                    <div>
+                        <h3>Nome</h3>
+                        <h3>Data de Nascimento</h3>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="candidatos-info-recrutador" id="candidatos-na-vaga-recrutador" >
+                    
+                </div>
+            </div>
+            <div class="buttons">
+                <button onclick="irPara('detalhe-da-vaga-recrutador','telaLogin')">Sair</button>
+                <button>Excluir vaga</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="telaLogin" class="">
         <div id="container">
             <div id="titulo">
                 <p>Login do Sistema</p>
@@ -108,7 +239,7 @@
                 <input id="senha" onkeyup="validaSenha()"> <br>
                 <span id="senha-registration-erro" class="esconder">Senha inválida</span> <br>
                 <input type="checkbox" id="primeiroEmprego" name="primeiroEmprego">
-                <label for="primeiroEmprego" id="labelPrimeiroEmprego">Primeiro Emprego?</label><br>              
+                <label for="primeiroEmprego" id="labelPrimeiroEmprego">Primeiro Emprego?</label><br>
             </div>
             <div id="botoes">
                 <button id="return" onclick="irPara('telaCadastro', 'telaLogin')">Voltar</button>
@@ -117,11 +248,9 @@
         </div>
     </div>
 
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
     <script src="/js/script.js"></script>
     <script src="./js/validacoes.js"></script>
 </body>
-
 </html>
