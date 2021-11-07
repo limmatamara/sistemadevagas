@@ -164,3 +164,4 @@ async function buscarUsuario (email) {
     return usuario;
 }
 //#endregion Validação de login
+

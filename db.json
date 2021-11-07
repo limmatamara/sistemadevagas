@@ -49,6 +49,15 @@
           "senha": "a",
           "primeiroEmprego": "on",
           "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
         }
       ],
       "id": 1
@@ -57,7 +66,26 @@
       "titulo": "minhs vaga",
       "descricao": "kkkkkk",
       "remuneracao": "5000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "victor",
+          "dataNascimento": "30/01/1998",
+          "email": "ig@gg.com",
+          "senha": "12345Ab!",
+          "primeiroEmprego": "on",
+          "id": 5
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        }
+      ],
       "id": 2
     },
     {
@@ -65,6 +93,15 @@
       "descricao": "vaga maravilhosa",
       "remuneracao": "1000",
       "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "victor",
+          "dataNascimento": "30/01/1998",
+          "email": "ig@gg.com",
+          "senha": "12345Ab!",
+          "primeiroEmprego": "on",
+          "id": 5
+        },
         {
           "tipoDeUsuario": "trabalhador",
           "nome": "A",
@@ -84,89 +121,3 @@
       "candidatos": [
         {
           "tipoDeUsuario": "trabalhador",
-          "nome": "Novo joãozinho",
-          "dataNascimento": "30/01/1998",
-          "email": "jogaoteste@gg.com",
-          "senha": "12345Ab!",
-          "primeiroEmprego": "on",
-          "id": 7
-        },
-        {
-          "tipoDeUsuario": "trabalhador",
-          "nome": "A",
-          "dataNascimento": "02/07/1992",
-          "email": "a@a.com",
-          "senha": "a",
-          "primeiroEmprego": "on",
-          "id": 4
-        },
-        {
-          "tipoDeUsuario": "trabalhador",
-          "nome": "A",
-          "dataNascimento": "02/07/1992",
-          "email": "a@a.com",
-          "senha": "a",
-          "primeiroEmprego": "on",
-          "id": 4
-        },
-        {
-          "tipoDeUsuario": "trabalhador",
-          "nome": "A",
-          "dataNascimento": "02/07/1992",
-          "email": "a@a.com",
-          "senha": "a",
-          "primeiroEmprego": "on",
-          "id": 4
-        }
-      ],
-      "id": 4
-    }
-  ],
-  "usuarios": [
-    {
-      "tipoDeUsuario": "recrutador",
-      "nome": "Victor Trajano",
-      "dataNascimento": "30/01/1998",
-      "email": "trajanodev@hotmail.com",
-      "senha": "12345Ab!",
-      "primeiroEmprego": "on",
-      "id": 3
-    },
-    {
-      "tipoDeUsuario": "trabalhador",
-      "nome": "A",
-      "dataNascimento": "02/07/1992",
-      "email": "a@a.com",
-      "senha": "a",
-      "primeiroEmprego": "on",
-      "id": 4
-    },
-    {
-      "tipoDeUsuario": "trabalhador",
-      "nome": "victor",
-      "dataNascimento": "30/01/1998",
-      "email": "ig@gg.com",
-      "senha": "12345Ab!",
-      "primeiroEmprego": "on",
-      "id": 5
-    },
-    {
-      "tipoDeUsuario": "trabalhador",
-      "nome": "Joaozinho Pereira",
-      "dataNascimento": "30/09/2001",
-      "email": "aa@gg.com",
-      "senha": "12345Ab!",
-      "primeiroEmprego": "on",
-      "id": 6
-    },
-    {
-      "tipoDeUsuario": "trabalhador",
-      "nome": "Novo joãozinho",
-      "dataNascimento": "30/01/1998",
-      "email": "jogaoteste@gg.com",
-      "senha": "12345Ab!",
-      "primeiroEmprego": "on",
-      "id": 7
-    }
-  ]
-}
