@@ -1,3 +1,4 @@
+// const { default: axios } = require("axios")
 
 //#region Cadastro Usuário
 const validarTipoDeUsuario= () => {
@@ -137,5 +138,22 @@ async function validarLogin () {
             else if (podeLogar && podeLogar.tipoDeUsuario === 'trabalhador') {
                 irPara('telaLogin', 'home-trabalhador');
             }                   
+}
+
+async function esqueceuASenha() {    
+    let email = prompt('Digite o email para recuperação de senha:');
+    const usuario = await buscarUsuario(email);     
+    if (usuario) {
+        alert(usuario.senha);
+    } else {
+        alert('Digite um email válido');
+    }
+}
+
+async function buscarUsuario (email) {
+    const response = await axios.get('http://localhost:3000/usuarios');
+    let usuarios = response.data;
+    let usuario= usuarios.find(usuario => usuario.email === email);
+    return usuario;
 }
 
