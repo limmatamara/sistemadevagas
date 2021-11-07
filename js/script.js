@@ -1,4 +1,8 @@
 
+
+var idVaga = 0
+var idCandidato = 0
+
 class Vaga {
     id;
     titulo = '';
@@ -43,10 +47,11 @@ class Usuario{
         this.senha = senha;
         this.primeiroEmprego = primeiroEmprego;
     }
+
+    candidatarEmUmaVaga = (usuario, vaga) =>{
+        
+    }
 }
-
-
-
 
 const get = async(req) => {
     const { data: vagas } = await axios.get(`http://localhost:3000/${req}`)
@@ -60,10 +65,7 @@ const irPara = (origem, destino) => {
     if((destino === 'telaLogin' || destino === 'telaCadastro')){
         elementoOrigem.setAttribute('class' , 'esconder');
         elementoDestino.setAttribute('class' , '');
-    }else if(destino === 'home-trabalhador' || destino === 'home-recrutador' || destino === 'cadastro-de-vaga'){
-        elementoOrigem.setAttribute('class' , 'esconder');
-        elementoDestino.setAttribute('class' , 'container');
-    }else if(destino === 'detalhe-da-vaga'){
+    }else if(destino === 'home-trabalhador' || destino === 'home-recrutador' || destino === 'cadastro-de-vaga'|| destino === 'detalhe-da-vaga'){
         elementoOrigem.setAttribute('class' , 'esconder');
         elementoDestino.setAttribute('class' , 'container');
     }
@@ -100,7 +102,7 @@ const cadastraUsuario = () => {
     }
 }
 
-const cadastrarNovaVaga = async (event) => {
+const cadastrarNovaVaga = async () => {
 
     let inputTitulo = document.getElementById('input-titulo')
     let inputDescricao = document.getElementById('input-descricao')
@@ -132,9 +134,11 @@ const listarVagas = async (id) => {
 
         li.appendChild(titleSpan);
         li.appendChild(remunerationSpan);
-        li.addEventListener('click' , () => {
+        li.addEventListener('click' , (event) => {
             irPara('home-trabalhador' , 'detalhe-da-vaga')
+            idVaga = event.target.id
         })
+        li.setAttribute('id' , vaga.id)
         div.appendChild(li);
 
         let userList = document.getElementById(`${id}`)
@@ -142,6 +146,29 @@ const listarVagas = async (id) => {
 
     })
 }
+
+const candidatarEmUmaNovaVaga = async() => {
+    
+    let listaDeUsuarios = await get('usuarios')
+    let encontrarUsuarios = listaDeUsuarios.find(u => u.id === idUsuario)
+
+    let listaDeVagas = await get('vagas')
+    let encontrarVaga = listaDeVagas.find(v => v.id === parseInt(idVaga))
+
+    let candidatura = new Candidatura(idVaga, idUsuario)
+
+    novoCandidato = encontrarVaga.candidatos.push(encontrarUsuarios)
+    axios.put(`http://localhost:3000/vagas/${idVaga}`, encontrarVaga)
+
+    console.log(encontrarUsuarios)
+    console.log(encontrarVaga)
+}
+
+
+
+// candidatarEmUmaNovaVaga(1 , 'nada')
+
+
 
 function limparCampos() {
     document.getElementById('email-login').value = '';

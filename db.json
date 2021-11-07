@@ -4,43 +4,40 @@
       "titulo": "Minha vaga 1",
       "descricao": "Vaga top demais",
       "remuneracao": "5000",
-      "candidatos": [],
+      "candidatos": [
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "A",
+          "dataNascimento": "02/07/1992",
+          "email": "a@a.com",
+          "senha": "a",
+          "primeiroEmprego": "on",
+          "id": 4
+        }
+      ],
       "id": 1
     },
     {
-      "titulo": "minhs vaga",
-      "descricao": "kkkkkk",
-      "remuneracao": "5000",
-      "candidatos": [],
+      "titulo": "Vaga 2",
+      "descricao": "Para teste",
+      "remuneracao": "2000",
       "id": 2
     },
     {
-      "titulo": "Vaga top  show",
-      "descricao": "vaga maravilhosa",
+      "titulo": "vaga 3 teste",
+      "descricao": "teste",
       "remuneracao": "1000",
       "candidatos": [],
       "id": 3
-    },
-    {
-      "titulo": "Nova vaga 5",
-      "descricao": "Minha vaga 5 para teste",
-      "remuneracao": "5000",
-      "candidatos": [],
-      "id": 4
-    },
-    {
-      "titulo": "Vaga 5",
-      "descricao": "minha vaga top",
-      "remuneracao": "2000",
-      "candidatos": [],
-      "id": 5
-    },
-    {
-      "titulo": "Nova vaga",
-      "descricao": "fkdamfsdmcsdoifmdso",
-      "remuneracao": "3000",
-      "candidatos": [],
-      "id": 6
     }
   ],
   "usuarios": [
