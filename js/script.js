@@ -1,3 +1,4 @@
+
 var idVaga = 0
 var idCandidato = 0
 var idUsuario = 0
@@ -81,6 +82,8 @@ const cadastraUsuario = () => {
 
     try {
         axios.post('http://localhost:3000/usuarios', novoUsuario)
+        alert('Cadastro concluído')
+        irPara('telaCadastro', 'telaLogin')
     } catch (err) {
         console.log('Deu erro => ' + err)
     }
@@ -95,11 +98,12 @@ const cadastrarNovaVaga = async () => {
 
     try {
         await axios.post('http://localhost:3000/vagas', novaVaga)
+        alert('Vaga registrada com sucesso')
+        irPara('cadastro-de-vaga', 'home-recrutador')
 
     } catch (err) {
-        console.log('Deu erro => ' + err)
+        alert('Existem erros no cadastramento da vaga.')
     }
-    alert('Cadastro concluído com suscesso')
 }
 
 const listarVagas = async (id) => {
@@ -119,13 +123,13 @@ const listarVagas = async (id) => {
         if (tipoDeUsuario === 'trabalhador') {
             li.addEventListener('click', (event) => {
                 irPara('home-trabalhador', 'detalhe-da-vaga')
-                idVaga = event.target.id
+                idVaga = parseInt(event.target.id)
                 listarCandidatosEmVagaTrabalhador()
             })
         } else if (tipoDeUsuario === 'recrutador') {
             li.addEventListener('click', (event) => {
                 irPara('home-recrutador', 'detalhe-da-vaga-recrutador')
-                idVaga = event.target.id
+                idVaga = parseInt(event.target.id)
                 listarCandidatosEmVagaRecrutador()
             })
         }
@@ -150,15 +154,23 @@ const candidatarEmUmaNovaVaga = async () => {
     await axios.post('http://localhost:3000/candidaturas', candidatura)
 
 
+
     console.log(encontrarUsuarios)
 
     novoCandidato = encontrarVaga.candidatos.push(encontrarUsuarios)
-    axios.put(`http://localhost:3000/vagas/${idVaga}`, encontrarVaga)
+    try{
+        axios.put(`http://localhost:3000/vagas/${idVaga}`, encontrarVaga)
+        alert('Candidatura efetuada')
+    }catch(err){
+        console.log(err)
+    }
 
+    
+    get('http://localhost:3000/vagas/')
+    irPara('detalhe-da-vaga' , 'home-trabalhador')
+    
     console.log(encontrarVaga)
 }
-
-
 
 
 const listarCandidatosEmVagaTrabalhador = async () => {
@@ -209,7 +221,6 @@ const listarCandidatosEmVagaRecrutador = async () => {
     let remuneracaoDaVaga = document.getElementById('span-remuneracao-recrutador')
     remuneracaoDaVaga.innerText = vagaEncontrada.remuneracao
 
-
     candidatosDaVagaEncontrada.forEach(candidato => {
         let div = document.createElement('div')
         let spanNome = document.createElement('span')
@@ -221,14 +232,17 @@ const listarCandidatosEmVagaRecrutador = async () => {
         idUsuario = candidato.id
         
         button.addEventListener('click', async (event) => {
-            let id = event.target.value
+            let id = event.target.id
+            console.log(id)
             const response = await axios.get('http://localhost:3000/candidaturas')
-            let candidato = response.data.find(c => Number.parseInt(c.idCandidato) === Number.parseInt(idUsuario))
-            idVaga = candidato.idVaga
+            let candidato = response.data.find(c => Number.parseInt(c.idCandidato) === Number.parseInt(id))
+            console.log(candidato)
+            idVaga = candidato.id
             idVaga = Number.parseInt(idVaga)
             candidato.reprovado = true;
             await axios.put(`http://localhost:3000/candidaturas/${idVaga}`, candidato)
         })
+
         button.innerText = 'Reprovar'
         let listaDeCandidatos = document.getElementById('candidatos-na-vaga-recrutador')
 
@@ -237,18 +251,19 @@ const listarCandidatosEmVagaRecrutador = async () => {
         div.appendChild(button)
         listaDeCandidatos.appendChild(div)
     })
-
     console.log(vagaEncontrada)
 }
 
 const excluirVaga = async () => {
     try {
         await axios.delete(`http://localhost:3000/vagas/${idVaga}`)
+        alert('Vaga excluída')
+        irPara('detalhe-da-vaga-recrutador', 'home-recrutador')
+        
     } catch (err) {
         console.log('Deu erro => ' + err)
     }
 }
-
 
 function limparCampos() {
     document.getElementById('email-login').value = '';
@@ -256,6 +271,3 @@ function limparCampos() {
 
 }
 
-const teste = async () => {
-   
-}
