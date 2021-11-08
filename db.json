@@ -13,6 +13,15 @@
           "senha": "b",
           "primeiroEmprego": "on",
           "id": 2
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "Elen",
+          "dataNascimento": "30/01/1998",
+          "email": "e",
+          "senha": "e",
+          "primeiroEmprego": "on",
+          "id": 5
         }
       ],
       "id": 1
@@ -39,6 +48,24 @@
           "senha": "d",
           "primeiroEmprego": "on",
           "id": 4
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "Carlos",
+          "dataNascimento": "30/01/1998",
+          "email": "c",
+          "senha": "c",
+          "primeiroEmprego": "on",
+          "id": 3
+        },
+        {
+          "tipoDeUsuario": "trabalhador",
+          "nome": "beatriz",
+          "dataNascimento": "02/07/1992",
+          "email": "b",
+          "senha": "b",
+          "primeiroEmprego": "on",
+          "id": 2
         }
       ],
       "id": 2
@@ -94,14 +121,14 @@
   "candidaturas": [
     {
       "idVaga": "1",
-      "idCandidato": 2,
+      "idCandidato": 5,
       "reprovado": true,
       "id": 1
     },
     {
       "idVaga": "2",
-      "idCandidato": 3,
-      "reprovado": false,
+      "idCandidato": 2,
+      "reprovado": true,
       "id": 2
     },
     {
@@ -109,6 +136,24 @@
       "idCandidato": 4,
       "reprovado": false,
       "id": 3
+    },
+    {
+      "idVaga": "1",
+      "idCandidato": 5,
+      "reprovado": false,
+      "id": 4
+    },
+    {
+      "idVaga": "2",
+      "idCandidato": 3,
+      "reprovado": false,
+      "id": 5
+    },
+    {
+      "idVaga": "2",
+      "idCandidato": 2,
+      "reprovado": false,
+      "id": 6
     }
   ]
 }

@@ -1,4 +1,3 @@
-
 var idVaga = 0
 var idCandidato = 0
 var idUsuario = 0
@@ -222,6 +221,7 @@ const listarCandidatosEmVagaRecrutador = async () => {
         idUsuario = candidato.id
         
         button.addEventListener('click', async (event) => {
+            let id = event.target.value
             const response = await axios.get('http://localhost:3000/candidaturas')
             let candidato = response.data.find(c => Number.parseInt(c.idCandidato) === Number.parseInt(idUsuario))
             idVaga = candidato.idVaga
@@ -259,5 +259,3 @@ function limparCampos() {
 const teste = async () => {
    
 }
-
-teste()
