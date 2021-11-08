@@ -119,13 +119,14 @@
                     </div>
                 </div>
 
-                <div class="candidatos-info" id="candidatos-na-vaga-trabalhador" >
-                    
+                <div class="candidatos-info" id="candidatos-na-vaga-trabalhador">
+
                 </div>
             </div>
             <div class="buttons">
                 <button onclick="irPara('detalhe-da-vaga','home-trabalhador')">Voltar</button>
-                <button onclick="" id="botao-candidatar-vaga" class="esconder" id="cancelar-candidatura" >Cancelar Candidatura</button>
+                <button onclick="" id="botao-candidatar-vaga" class="esconder" id="cancelar-candidatura">Cancelar
+                    Candidatura</button>
                 <button onclick="candidatarEmUmaNovaVaga()" id="botao-candidatar-vaga">Candidatar-se</button>
             </div>
         </div>
@@ -174,8 +175,8 @@
                     </div>
                 </div>
 
-                <div class="candidatos-info-recrutador" id="candidatos-na-vaga-recrutador" >
-                    
+                <div class="candidatos-info-recrutador" id="candidatos-na-vaga-recrutador">
+
                 </div>
             </div>
             <div class="buttons">
@@ -185,7 +186,7 @@
         </div>
     </section>
 
-    <div id="telaLogin" class="">
+    <div id="telaLogin" class="esconder">
         <div id="container">
             <div id="titulo">
                 <p>Login do Sistema</p>
@@ -206,7 +207,7 @@
         </div>
     </div>
 
-    <div id="telaCadastro" class="esconder">
+    <div id="telaCadastro">
         <div id="container2">
             <div id="titulo">
                 <p>Cadastro</p>
@@ -214,25 +215,27 @@
             <div id="informacoesCadastro">
                 <p>Tipo de Usuário</p>
                 <select id="tipoUsuario" onchange="validarTipoDeUsuario()">
-                    <option value=""></option>
+                    <option value="" selected>Escolha uma das opções</option>
                     <option value="recrutador">Recrutador</option>
                     <option value="trabalhador">Trabalhador</option>
                 </select>
 
                 <p>Nome Completo*</p>
-                <input id="nomeCompleto" oninput="validarNome()"> <br>
+                <input id="nomeCompleto" oninput="validarNome()" placeholder="Ex: John Doe"> <br>
                 <span id="nome-completo-error" class="esconder">Apenas letras são aceitas nesse campo</span>
                 <p>Data de Nascimento*</p>
-                <input id="dataNascimento" onkeyup="validarData()" maxlength="10"> <br>
+                <input id="dataNascimento" onkeyup="validarData()" maxlength="10" placeholder="Ex: 30/01/1998"> <br>
                 <span id="dataNascimento-registration-error" class="esconder">Data inválida</span>
                 <p>Email*</p>
-                <input id="emailCadastro" onkeyup="validaEmail()"> <br>
+                <input id="emailCadastro" onkeyup="validaEmail()" placeholder="Ex: contato@gg.com"> <br>
                 <span id="email-registration-error" class="esconder">Email inválido</span>
                 <p>Senha*</p>
                 <input id="senha" onkeyup="validaSenha()"> <br>
-                <span id="senha-registration-erro" class="esconder">Senha inválida</span> <br>
-                <input type="checkbox" id="primeiroEmprego" name="primeiroEmprego">
-                <label for="primeiroEmprego" id="labelPrimeiroEmprego">Primeiro Emprego?</label><br>
+                <span id="senha-registration-erro" class="esconder">Senha inválida</span>
+                <div class="label">
+                    <label for="primeiroEmprego" id="labelPrimeiroEmprego">Primeiro emprego?</label>
+                    <input type="checkbox" id="primeiroEmprego" name="primeiroEmprego">
+                </div>
             </div>
             <div id="botoes">
                 <button id="return" onclick="irPara('telaCadastro', 'telaLogin')">Voltar</button>
@@ -246,4 +249,5 @@
     <script src="./js/script.js"></script>
     <script src="./js/validacoes.js"></script>
 </body>
+
 </html>

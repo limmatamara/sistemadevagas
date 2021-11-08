@@ -224,26 +224,69 @@ main p {
 }
 
 #container2 {
-    margin: auto;
-    margin-top: 5%;
-    width: 60%;
-    border: 1px solid black;
-    border-radius: 4px;
+    max-width: 700px;
+    margin: 10rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--color-black);
+    border-radius: .25rem;
+}
+
+#titulo{
+    padding: .3rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
 }
 
 #informacoesCadastro {
-    margin-left: 20%;
+    margin: 0 4rem;
+    
 }
 
-#informacoesCadastro p {
-    margin-bottom: 0%;
+#informacoesCadastro  select{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+    cursor: pointer;
+    border: 1px solid var(--color-black);
 }
 
-#informacoesCadastro input select{
-    margin-top: 1%;
-    border-radius: 2px;
-    border: 1px solid #343a40;
-    padding: 1%;
+#informacoesCadastro select option{
+    font-size: .9rem;
+}
+
+#informacoesCadastro input{
+    width: 100%;
+    margin-bottom: 1rem;
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid var(--color-black);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid var(--color-black);
+    border-radius: .25rem;
+}
+
+
+#informacoesCadastro .label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 150px;
+    align-items: center;
+}
+
+#primeiroEmprego{
+    margin-top: 16px;
+}
+
+
+#informacoesCadastro input::placeholder{
+    font-style: italic;
+    font-weight: 600;
+    padding-left: 10px;
 }
 
 #botoes {
