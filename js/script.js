@@ -147,7 +147,9 @@ const candidatarEmUmaNovaVaga = async () => {
     let listaDeVagas = await get('vagas')
     let encontrarVaga = listaDeVagas.find(v => v.id === parseInt(idVaga))
 
-    let candidatura = new Candidatura(idVaga, idUsuario)
+    let candidatura = new Candidatura(idVaga, idUsuario, false)
+    await axios.post('http://localhost:3000/candidaturas', candidatura)
+
 
     console.log(encontrarUsuarios)
 
@@ -156,6 +158,9 @@ const candidatarEmUmaNovaVaga = async () => {
 
     console.log(encontrarVaga)
 }
+
+
+
 
 const listarCandidatosEmVagaTrabalhador = async () => {
 
@@ -172,7 +177,6 @@ const listarCandidatosEmVagaTrabalhador = async () => {
 
     let remuneracaoDaVaga = document.getElementById('span-remuneracao')
     remuneracaoDaVaga.innerText = vagaEncontrada.remuneracao
-
 
     candidatosDaVagaEncontrada.forEach(candidato => {
         let div = document.createElement('div')
@@ -214,35 +218,36 @@ const listarCandidatosEmVagaRecrutador = async () => {
         let spanDataNascimento = document.createElement('span')
         spanDataNascimento.innerText = candidato.dataNascimento
         let button = document.createElement('button')
-        button.setAttribute('id' , candidato.id)
+        button.setAttribute('id', candidato.id)
+        idUsuario = candidato.id
+        
+        button.addEventListener('click', async (event) => {
+            const response = await axios.get('http://localhost:3000/candidaturas')
+            let candidato = response.data.find(c => Number.parseInt(c.idCandidato) === Number.parseInt(idUsuario))
+            idVaga = candidato.idVaga
+            idVaga = Number.parseInt(idVaga)
+            candidato.reprovado = true;
+            await axios.put(`http://localhost:3000/candidaturas/${idVaga}`, candidato)
+        })
         button.innerText = 'Reprovar'
         let listaDeCandidatos = document.getElementById('candidatos-na-vaga-recrutador')
-        
+
         div.appendChild(spanNome)
         div.appendChild(spanDataNascimento)
         div.appendChild(button)
         listaDeCandidatos.appendChild(div)
-
     })
 
     console.log(vagaEncontrada)
 }
 
-const excluirVaga = async() => {
-    try{
+const excluirVaga = async () => {
+    try {
         await axios.delete(`http://localhost:3000/vagas/${idVaga}`)
-    }catch(err){
+    } catch (err) {
         console.log('Deu erro => ' + err)
     }
 }
-
-
-
-
-
-
-// candidatarEmUmaNovaVaga(1 , 'nada')
-
 
 
 function limparCampos() {
@@ -250,3 +255,9 @@ function limparCampos() {
     document.getElementById('password').value = '';
 
 }
+
+const teste = async () => {
+   
+}
+
+teste()
